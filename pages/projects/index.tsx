@@ -17,7 +17,7 @@ const ProjectsHome = ({ projects }: IProps) => {
       <div className="flex flex-col flex-wrap content-center px-2">
         {projects.map((project) => (
           <CardWithImage
-            extraClasses="w-full max-w-3xl shadow-light m-2"
+            extraClasses="shadow-light m-2"
             imageUrl={project.previewImgSrc}
             key={project.title}
             title={project.title}

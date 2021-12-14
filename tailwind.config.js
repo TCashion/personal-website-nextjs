@@ -31,6 +31,9 @@ module.exports = {
       width: {
         '30%': '30%',
       },
+      maxWidth: {
+        900: '900px' 
+      }
     },
   },
   variants: {},
