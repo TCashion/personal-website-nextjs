@@ -42,7 +42,6 @@ export interface IAddProjectParams {
 }
 
 export interface ISlugs {
-  __typename: string;
   slug: string;
 }
 

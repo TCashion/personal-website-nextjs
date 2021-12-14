@@ -1,15 +1,12 @@
 import Link from 'next/link';
-import { initApolloClient } from '../../lib/apollo';
-import { IProject, ISlugs } from '../../@types/interfaces';
+import { IProject, ISlugs } from '../../types/types';
 import Layout from '../../components/Layout';
 import Button from '../../components/Button';
 import ImageCard from '../../components/ImageCard';
-import {
-  PROJECT_DATA,
-  PROJECT_SLUGS,
-} from '../../lib/projects/projectsService';
+import { getAllProjectSlugs } from '../../lib/projectsService';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { formatDate } from '../../lib/helpers';
+import { projects } from '../../lib/projects/projectsData';
 
 interface IProps {
   project: IProject;
@@ -29,7 +26,7 @@ const Project = ({ project }: IProps) => {
               </a>
             </Link>
             <h2 className="my-4">{project.title}</h2>
-            <h3 className="my-4">{project.date}</h3>
+            <h3 className="my-4">{formatDate(project)}</h3>
             <p className="my-4">{project.description}</p>
             {project.subDescription ? (
               <ul className="my-4">
@@ -107,14 +104,8 @@ const Project = ({ project }: IProps) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const apolloClient = initApolloClient();
-  const slugsData = await apolloClient.query({
-    query: PROJECT_SLUGS,
-  });
-  const slugs = slugsData.data.allProjects;
-  const paths: string[] = slugs.map(
-    (projectSlug: ISlugs) => `/projects/${projectSlug.slug}`
-  );
+  const slugs = getAllProjectSlugs();
+  const paths: string[] = slugs.map((slug: string) => `/projects/${slug}`);
   return {
     paths,
     fallback: false,
@@ -122,28 +113,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  try {
-    const slug = params && params.slug ? params.slug : '';
-    const apolloClient = initApolloClient();
-    const projectData = await apolloClient.query({
-      query: PROJECT_DATA,
-      variables: {
-        projectSlug: slug,
-      },
-    });
-    const project: IProject = { ...projectData.data.oneProject };
-    project.date = formatDate(project);
-    return {
-      props: {
-        project,
-      },
-    };
-  } catch (err) {
-    console.log(err);
-    return {
-      props: {},
-    };
-  }
+  const slug = params && params.slug ? params.slug[0] : '';
+  const project: IProject = projects.filter(
+    (project) => (project.slug = slug)
+  )[0];
+  return {
+    props: {
+      project,
+    },
+  };
 };
 
 export default Project;
