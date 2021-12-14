@@ -26,7 +26,7 @@ export interface ICollaborator {
 export interface IProject {
   slug: string;
   title: string;
-  date: Date | number | string;
+  timeStamp: number;
   description: string;
   subDescription?: string[];
   tech: string[];
@@ -59,7 +59,7 @@ export interface IAddPostParams {
 export interface IPost {
   slug: string;
   title: string;
-  date: string | number;
+  timeStamp: number;
   preview?: string;
   previewImgSrc: string;
   content: string;
