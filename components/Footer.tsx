@@ -28,7 +28,6 @@ const Footer = () => {
         <h3>Travis G. Cashion</h3>
       </div>
       <div className="w-1/3 hidden sm:flex flex-col text-center">
-        &copy; 2020
         <p>Designed & built by Travis Cashion</p>
       </div>
       <div className="w-full sm:w-1/3 flex text-center">
