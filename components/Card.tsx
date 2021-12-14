@@ -1,4 +1,4 @@
-import { IChildrenProps } from '../@types/interfaces';
+import { IChildrenProps } from '../types/types';
 
 const Card = ({
   children,

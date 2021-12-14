@@ -1,4 +1,4 @@
-import { IChildrenProps } from '../@types/interfaces';
+import { IChildrenProps } from '../types/types';
 
 const InvisiCard = ({ children, title }: IChildrenProps) => {
   return (

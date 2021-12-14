@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
-import { IChildrenProps } from '../@types/interfaces';
+import { IChildrenProps } from '../types/types';
 
 const Layout = ({ children }: IChildrenProps) => {
   return (

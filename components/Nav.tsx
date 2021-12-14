@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { INavProps } from '../@types/interfaces';
+import { INavProps } from '../types/types';
 
 const Nav = ({ links }: INavProps) => {
   return (

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Nav from './Nav';
 import SideNav from './SideNav';
 import Overlay from './Overlay';
-import { INavLink } from '../@types/interfaces';
+import { INavLink } from '../types/types';
 
 const links: INavLink[] = [
   { label: 'Home', href: '/' },
