@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Layout from '../../components/Layout';
 import CardWithImage from '../../components/CardWithImage';
 import Button from '../../components/Button';
-import { formatDate, sortByDate } from '../../lib/helpers';
+import { byNewestFirst, byOldestFirst, formatDate } from '../../lib/helpers';
 import { IProject } from '../../types/types';
 import { GetStaticProps } from 'next';
 import { projects } from '../../lib/projects/projectsData';
@@ -14,7 +14,7 @@ interface IProps {
 const ProjectsHome = ({ projects }: IProps) => {
   return (
     <Layout>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-col flex-wrap content-center">
         {projects.map((project) => (
           <CardWithImage
             extraClasses="w-full max-w-3xl shadow-light m-2 mx-8"
@@ -44,9 +44,10 @@ const ProjectsHome = ({ projects }: IProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
+  projects.sort(byNewestFirst)
   return {
     props: {
-      projects,
+      projects
     },
   };
 };
