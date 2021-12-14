@@ -53,7 +53,7 @@ const Home: NextPage = () => {
             <Card extraClasses="shadow-light">
               <h2>Blog</h2>
               <p>
-                I love to write about things that excite me, adventures I've
+                I love to write about things that excite me, adventures I&apos;ve
                 had, and some of my most poignant memories. In my blog, I share
                 thoughts and stories that are meaningful to me.
               </p>
