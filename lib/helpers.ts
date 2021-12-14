@@ -21,14 +21,12 @@ export const formatDate = (parent: IProject | IPost): string => {
   return `${month}, ${year}`;
 };
 
-export const sortByDate = (
-  parentArr: IProject[] | IPost[]
-): IProject[] | IPost[] => {
-  return parentArr.sort((a: IProject | IPost, b: IProject | IPost): number => {
-    if (a.timeStamp < b.timeStamp) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
-};
+export const byNewestFirst = (
+  a: IProject | IPost,
+  b: IProject | IPost
+): number => b.timeStamp - a.timeStamp;
+
+export const byOldestFirst = (
+  a: IProject | IPost,
+  b: IProject | IPost
+): number => a.timeStamp - b.timeStamp;

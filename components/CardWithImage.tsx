@@ -7,7 +7,7 @@ const CardWithImage = ({
   title,
   subtitle,
 }: IChildrenProps) => {
-  const className = `text-left overflow-hidden bg-secondary rounded-lg m-4 ${extraClasses}`;
+  const className = `text-left overflow-hidden bg-secondary rounded-lg m-4 max-w-900 ${extraClasses}`;
 
   return (
     <article className={className}>
