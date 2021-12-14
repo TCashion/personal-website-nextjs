@@ -14,10 +14,10 @@ interface IProps {
 const ProjectsHome = ({ projects }: IProps) => {
   return (
     <Layout>
-      <div className="flex flex-col flex-wrap content-center">
+      <div className="flex flex-col flex-wrap content-center px-2">
         {projects.map((project) => (
           <CardWithImage
-            extraClasses="w-full max-w-3xl shadow-light m-2 mx-8"
+            extraClasses="w-full max-w-3xl shadow-light m-2"
             imageUrl={project.previewImgSrc}
             key={project.title}
             title={project.title}
