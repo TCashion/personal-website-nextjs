@@ -20,6 +20,69 @@ a {
   font-family: 'Material Icons';
 }
 
+.image-cropper {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  border: solid 3px var(--main-plus-one);
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+/* for vertically-oriented images */
+.round-img {
+  height: auto; 
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+/* for horizontally-oriented images */
+.round-img-horiz {
+  height: 100%; 
+  width: auto;
+  margin: 0 auto;
+  margin-left: -25%;
+}
+
+.about-img {
+  margin-top: -15%;
+}
+
+/* image classes for blog posts to fit with prose */
+/* for images that take up entire width of container in between prose, i.e. not inline. */
+.block-img {
+  display: block;
+  margin: 10px auto;
+}
+
+.inline-left {
+  float: left;
+  padding-right: 20px;
+  max-width: 400px; 
+}
+
+.inline-right {
+  float: right;
+  padding-left: 20px;
+  max-width: 400px; 
+}
+
+.prose, .prose-heading {
+  padding: 15px 0;
+}
+
+.prose-heading {
+  font-size: 1.4rem;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: underline;
+}
+
+.page-title {
+  padding: 20px 0;
+}
+
 @tailwind base;
 
 /* Write your own custom base styles here */

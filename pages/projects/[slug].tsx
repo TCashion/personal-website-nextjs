@@ -3,7 +3,10 @@ import { IProject, ISlugs } from '../../types/types';
 import Layout from '../../components/Layout';
 import Button from '../../components/Button';
 import ImageCard from '../../components/ImageCard';
-import { getAllProjectSlugs } from '../../lib/projectsService';
+import {
+  getAllProjectSlugs,
+  getOneProjectData,
+} from '../../lib/projectsService';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { formatDate } from '../../lib/helpers';
 import { projects } from '../../lib/projects/projectsData';
@@ -113,10 +116,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const slug = params && params.slug ? params.slug[0] : '';
-  const project: IProject = projects.filter(
-    (project) => (project.slug = slug)
-  )[0];
+  const slug = params && params.slug;
+  const project = getOneProjectData(slug as string);
   return {
     props: {
       project,
