@@ -53,7 +53,7 @@ export const WornOutBoots = () => {
             experience was. Having skunked on my first couple of hunts taught me
             that hunting is about much more than just shooting animals.
           </p>
-          <img className="inline-left" src="../images/newboots.jpg" />
+          <img className="inline-left" src="../images/blog/newboots.jpg" />
           <p className="prose">
             As time went on, I got more hunts under my belt. My first taste of
             success came when two friends and I each killed does on the same
