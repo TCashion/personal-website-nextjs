@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import Layout from '../components/Layout';
+import aboutMeImg from '../public/images/about/Headshot.jpg';
 
 const About = () => {
   return (
@@ -6,7 +8,7 @@ const About = () => {
       <div className="container flex flex-col sm:flex-row">
         <div className="flex items-center">
           <div className="image-cropper">
-            <img className="about-img" src="images/about/Headshot.jpg" />
+            <Image className="about-img" src={aboutMeImg} />
           </div>
         </div>
         <div className="mx-5">
