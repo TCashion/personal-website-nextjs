@@ -61,5 +61,5 @@ export interface IPost {
   timeStamp: number;
   preview?: string;
   previewImgSrc: string;
-  content: string;
+  componentName: string;
 }

@@ -2,10 +2,10 @@ import Link from 'next/link';
 import Layout from '../../components/Layout';
 import CardWithImage from '../../components/CardWithImage';
 import Button from '../../components/Button';
-import { POST_PREVIEWS } from '../../lib/posts/postsService';
 import { IPost } from '../../types/types';
 import { GetStaticProps } from 'next';
 import { formatDate, byNewestFirst } from '../../lib/helpers';
+import { postsData } from '../../lib/posts/postsService';
 
 interface IProps {
   posts: IPost[];
@@ -49,11 +49,11 @@ export const getStaticProps: GetStaticProps = async () => {
   //     date,
   //   };
   // });
-  // sortByDate(posts);
+  postsData.sort(byNewestFirst);
 
   return {
     props: {
-      posts: [],
+      posts: postsData,
     },
   };
 };
