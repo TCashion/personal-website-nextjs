@@ -6,11 +6,8 @@ import Card from '../components/Card';
 import InvisiCard from '../components/InvisiCard';
 import Button from '../components/Button';
 import BannerImage from '../public/images/home/banner_cropped.png';
-
-const images = [
-  '/images/home/trekking.jpg',
-  '/images/home/thankyoubackground.jpg',
-];
+import TrekkingImage from '../public/images/home/trekking.jpg';
+import ThankYouBackgroundImage from '../public/images/home/thankyoubackground.jpg';
 
 const imageStyle = {
   backgroundSize: 'cover',
@@ -60,28 +57,15 @@ const Home: NextPage = () => {
             </Card>
           </div>
         </div>
-        <div
-          className="w-full sm:1/2 p-8 h-full"
-          style={{
-            background: `url(${images[1]})`,
-            ...imageStyle,
-            backgroundBlendMode: 'lighten',
-          }}
-        >
-          <span role="img" aria-label="trekking"></span>
-        </div>
+        <Image src={TrekkingImage} aria-label="trekking" width={700} />
       </div>
-      <div
-        className="flex justify-center"
-        style={{
-          background: `url(${images[2]})`,
-          height: '275px',
-          ...imageStyle,
-        }}
-      >
-        <InvisiCard>
-          <h2 className="my-auto">Thank you for visiting</h2>
-        </InvisiCard>
+      <div className="flex justify-center items-center">
+        <Image src={ThankYouBackgroundImage} aria-label="thank you" />
+        <div className="absolute">
+          <InvisiCard>
+            <h2 className="my-auto">Thank you for visiting</h2>
+          </InvisiCard>
+        </div>
       </div>
     </Layout>
   );
