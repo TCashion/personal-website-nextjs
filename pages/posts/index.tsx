@@ -37,18 +37,6 @@ const PostsHome = ({ posts }: IProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  // const apolloClient = initApolloClient();
-  // const postsData = await apolloClient.query({
-  //   query: POST_PREVIEWS,
-  // });
-  // const posts: IPost[] = postsData.data.allPosts.map((post: any) => {
-  //   const dateStr = post.date + '0000';
-  //   const date = parseInt(dateStr);
-  //   return {
-  //     ...post,
-  //     date,
-  //   };
-  // });
   postsData.sort(byNewestFirst);
 
   return {

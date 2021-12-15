@@ -1,16 +1,16 @@
 export const LetterToMyPreBootcampSelf = () => {
   return (
     <div className="container">
-      <div className="row page-title">
-        <div className="col col-12">
+      <div   className="page-title">
+        <div   >
           <h1>A letter to my pre-bootcamp self…</h1>
           <h4>September 4th, 2020</h4>
         </div>
       </div>
       <div className="divider"></div>
 
-      <div className="row">
-        <div className="col col-12">
+      <div  >
+        <div   >
           <p className="prose">
             There are a handful of things I would have liked to hear when I was
             considering enrolling in a coding bootcamp. I thought I'd share them

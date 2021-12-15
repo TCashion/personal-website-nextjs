@@ -3,11 +3,8 @@ import { IPost } from '../../types/types';
 import Layout from '../../components/Layout';
 import Button from '../../components/Button';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { LetterToMyPreBootcampSelf } from '../../lib/posts/components';
-import {
-  getAllPostSlugs,
-  getOnePostData,
-} from '../../lib/posts/postsService';
+import * as PostComponents from '../../lib/posts/components';
+import { getAllPostSlugs, getOnePostData } from '../../lib/posts/postsService';
 interface IProps {
   post: IPost;
 }
@@ -26,7 +23,29 @@ const Post = ({ post }: IProps) => {
               </a>
             </Link>
             {post.componentName === 'LetterToMyPreBootcampSelf' && (
-              <LetterToMyPreBootcampSelf />
+              <PostComponents.LetterToMyPreBootcampSelf />
+            )}
+            {post.componentName === 'HuntingWithMyFather' && (
+              <PostComponents.HuntingWithMyFather />
+            )}
+            {post.componentName === 'JustTheRightThing' && (
+              <PostComponents.JustTheRightThing />
+            )}
+            {post.componentName === 'MAF' && <PostComponents.MAF />}
+            {post.componentName === 'OneReallyWellWrittenParagraph' && (
+              <PostComponents.OneReallyWellWrittenParagraph />
+            )}
+            {post.componentName === 'Ritual' && (
+              <PostComponents.Ritual />
+            )}
+            {post.componentName === 'MostImportantQuestion' && (
+              <PostComponents.MostImportantQuestion />
+            )}
+            {post.componentName === 'WhereIsTheFear' && (
+              <PostComponents.WhereIsTheFear />
+            )}
+            {post.componentName === 'WornOutBoots' && (
+              <PostComponents.WornOutBoots />
             )}
           </div>
         </div>
