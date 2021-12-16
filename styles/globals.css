@@ -47,7 +47,7 @@ a {
 }
 
 .about-img {
-  margin-top: -15%;
+  margin-top: -15% !important;
 }
 
 /* image classes for blog posts to fit with prose */
@@ -144,6 +144,8 @@ body {
 }
 
 /* Start purging... */
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 /* Stop purging. */
 

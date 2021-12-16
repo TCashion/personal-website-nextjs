@@ -143,7 +143,7 @@ export const projects: IProject[] = [
     ],
     githubUrl: 'https://github.com/TCashion/personal-website-2.0',
     liveAppUrl: 'https://traviscashion.com/',
-    previewImgSrc: '/images/portfolio/previews/banner.png',
+    previewImgSrc: '/images/portfolio/previews/tree.png',
   },
   {
     slug: 'stopanalyzing',
