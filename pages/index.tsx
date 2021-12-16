@@ -9,11 +9,6 @@ import BannerImage from '../public/images/home/banner_cropped.png';
 import TrekkingImage from '../public/images/home/trekking.jpg';
 import ThankYouBackgroundImage from '../public/images/home/thankyoubackground.jpg';
 
-const imageStyle = {
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-};
-
 const Home: NextPage = () => {
   return (
     <Layout>
