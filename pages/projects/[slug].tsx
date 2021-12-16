@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { IProject, ISlugs } from '../../types/types';
+import { IProject } from '../../types/types';
 import Layout from '../../components/Layout';
 import Button from '../../components/Button';
 import ImageCard from '../../components/ImageCard';
@@ -9,7 +9,6 @@ import {
 } from '../../lib/projectsService';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { formatDate } from '../../lib/helpers';
-import { projects } from '../../lib/projects/projectsData';
 
 interface IProps {
   project: IProject;

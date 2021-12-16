@@ -1,16 +1,16 @@
 export const LetterToMyPreBootcampSelf = () => {
   return (
     <div className="container">
-      <div   className="page-title">
-        <div   >
+      <div className="page-title">
+        <div>
           <h1>A letter to my pre-bootcamp self…</h1>
           <h4>September 4th, 2020</h4>
         </div>
       </div>
       <div className="divider"></div>
 
-      <div  >
-        <div   >
+      <div>
+        <div>
           <p className="prose">
             There are a handful of things I would have liked to hear when I was
             considering enrolling in a coding bootcamp. I thought I'd share them
@@ -51,35 +51,37 @@ export const LetterToMyPreBootcampSelf = () => {
             takes off a few weeks into your class. Here are a few resources to
             help you learn the fundamentals:
           </p>
-          <ul>
-            <li>
-              <a
-                href="https://www.freecodecamp.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Freecodecamp
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.codecademy.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Codecademy
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.udemy.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Udemy
-              </a>
-            </li>
-          </ul>
+          <div className="prose">
+            <ul>
+              <li>
+                <a
+                  href="https://www.freecodecamp.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Freecodecamp
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.codecademy.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Codecademy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.udemy.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Udemy
+                </a>
+              </li>
+            </ul>
+          </div>
           <h3 className="prose-heading">
             When you graduate, you're not done learning.
           </h3>
@@ -113,7 +115,7 @@ export const LetterToMyPreBootcampSelf = () => {
             personally.
           </p>
           <h3 className="prose-heading">You can do it.</h3>
-          <p>
+          <p className="prose">
             Doubt is a built-in emotional response that's there to help guide
             you through life, especially when you're taking a risk. If doubt
             bubbles up when you think about your coding bootcamp, take note of

@@ -17,11 +17,13 @@ const Post = ({ post }: IProps) => {
       <div className="container p-8">
         <div className="flex flex-col sm:flex-row">
           <div className="w-full">
-            <Link href="/posts">
-              <a className="my-4">
-                <Button innerText="<< Go Back" type="button" />
-              </a>
-            </Link>
+            <div className="blog-go-back-container">
+              <Link href="/posts">
+                <a className="my-4">
+                  <Button innerText="<< Go Back" type="button" />
+                </a>
+              </Link>
+            </div>
             {post.componentName === 'LetterToMyPreBootcampSelf' && (
               <PostComponents.LetterToMyPreBootcampSelf />
             )}
@@ -35,9 +37,7 @@ const Post = ({ post }: IProps) => {
             {post.componentName === 'OneReallyWellWrittenParagraph' && (
               <PostComponents.OneReallyWellWrittenParagraph />
             )}
-            {post.componentName === 'Ritual' && (
-              <PostComponents.Ritual />
-            )}
+            {post.componentName === 'Ritual' && <PostComponents.Ritual />}
             {post.componentName === 'MostImportantQuestion' && (
               <PostComponents.MostImportantQuestion />
             )}

@@ -83,13 +83,12 @@ a {
   padding: 20px 0;
 }
 
+.prose, .page-title, .blog-go-back-container, .prose-heading {
+  margin: 0 auto;
+  max-width: 650px;
+}
+
 @tailwind base;
-
-/* Write your own custom base styles here */
-
-/* Start purging... */
-@tailwind components;
-/* Stop purging. */
 
 /* Write you own custom component styles here */
 

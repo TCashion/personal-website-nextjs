@@ -147,7 +147,7 @@ export const projects: IProject[] = [
   },
   {
     slug: 'stopanalyzing',
-    title: 'Stop Analyzing Embed (open source contribution)',
+    title: 'Stop Analyzing Embed (open source)',
     timeStamp: 1597471200000, // August
     description:
       'Stop Analyzing Embed is a beginner-friendly, open source project created and maintained by Banco Do Brasil. Think of it like a Tinder app for products: the user compares two products presented on cards, and chooses the one that they like most. I contributed to this project in two ways. First, I re-wrote the documentation to correct typos and make the information more accessible to beginner developers. Then, I created a button component, complete with Jest units tests, that triggers and animation to slide the cards off of the screen (in the event that the user does not like either option presented).',
@@ -163,5 +163,32 @@ export const projects: IProject[] = [
     ],
     githubUrl: 'https://github.com/bancodobrasil/stop-analyzing-embed',
     previewImgSrc: '/images/portfolio/previews/stop-analyzing.png',
+  },
+  {
+    slug: 'vuex-webextensions',
+    title: 'Vuex Webextensions (open source)',
+    timeStamp: 0,
+    description: '',
+    tech: [],
+    githubUrl: '',
+    previewImgSrc: '',
+  },
+  {
+    slug: 'chromedriver',
+    title: 'Selenium Chromedriver',
+    timeStamp: 0,
+    description: '',
+    tech: [],
+    githubUrl: '',
+    previewImgSrc: '',
+  },
+  {
+    slug: 'bex',
+    title: 'Ibotta Browser Extension',
+    timeStamp: 0,
+    description: '',
+    tech: [],
+    githubUrl: '',
+    previewImgSrc: '',
   },
 ];
