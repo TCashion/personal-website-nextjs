@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { IProject, ISlugs } from '../../types/types';
+import { IProject } from '../../types/types';
 import Layout from '../../components/Layout';
 import Button from '../../components/Button';
 import ImageCard from '../../components/ImageCard';
@@ -9,7 +9,7 @@ import {
 } from '../../lib/projectsService';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { formatDate } from '../../lib/helpers';
-import { projects } from '../../lib/projects/projectsData';
+import { PRIVATE } from '../../types/constants';
 
 interface IProps {
   project: IProject;
@@ -77,24 +77,32 @@ const Project = ({ project }: IProps) => {
             <div className="my-4">
               <a
                 className="mr-2"
-                href={project.githubUrl}
-                rel="noreferrer noopener"
-                target="_blank"
-              >
-                <Button innerText="GitHub" type="button" />
-              </a>
-              <a
-                className="mr-2"
-                href={project.liveAppUrl ? project.liveAppUrl : '#'}
+                href={
+                  project.githubUrl !== PRIVATE ? project.githubUrl : undefined
+                }
                 rel="noreferrer noopener"
                 target="_blank"
               >
                 <Button
-                  innerText="Live App"
+                  innerText={
+                    project.githubUrl === PRIVATE
+                      ? 'GitHub (private)'
+                      : 'GitHub'
+                  }
                   type="button"
-                  disabled={!project.liveAppUrl}
+                  disabled={project.githubUrl === PRIVATE}
                 />
               </a>
+              {project.liveAppUrl && (
+                <a
+                  className="mr-2"
+                  href={project.liveAppUrl}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  <Button innerText="Live App" type="button" />
+                </a>
+              )}
             </div>
           </div>
           <div className="w-full sm:w-1/3 my-auto">
