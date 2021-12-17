@@ -1,3 +1,4 @@
+import { PRIVATE } from '../../types/constants';
 import { IProject } from '../../types/types';
 
 export const collaborators = [
@@ -128,20 +129,17 @@ export const projects: IProject[] = [
   {
     slug: 'traviscashiondotcom',
     title: 'TravisCashion.com (v2.0)',
-    timeStamp: 1603952408032, // October
+    timeStamp: 1639754698396, // December 2021
     description:
-      "This is the second iteration of my personal portfolio site, which I rebuilt using the skills I've obtained over the last year. This site runs on NextJS, which is a React framework that serves server-side generated (SSG) pages. This makes for a fast, highly performant React website.",
+      'This is the second iteration of my personal portfolio site. This site runs on NextJS, which is a React-based framework that serves fast, highly performant React sites.',
     tech: [
       'HTML',
       'CSS (TailwindCSS)',
-      'Firebase (Hosting & Firestore)',
       'NextJS (React)',
       'TypeScript',
       'Node.JS',
-      'Apollo',
-      'GraphQL',
     ],
-    githubUrl: 'https://github.com/TCashion/personal-website-2.0',
+    githubUrl: 'https://github.com/TCashion/personal-website-nextjs',
     liveAppUrl: 'https://traviscashion.com/',
     previewImgSrc: '/images/portfolio/previews/tree.png',
   },
@@ -164,31 +162,41 @@ export const projects: IProject[] = [
     githubUrl: 'https://github.com/bancodobrasil/stop-analyzing-embed',
     previewImgSrc: '/images/portfolio/previews/stop-analyzing.png',
   },
-  {
-    slug: 'vuex-webextensions',
-    title: 'Vuex Webextensions (open source)',
-    timeStamp: 0,
-    description: '',
-    tech: [],
-    githubUrl: '',
-    previewImgSrc: '',
-  },
-  {
-    slug: 'chromedriver',
-    title: 'Selenium Chromedriver',
-    timeStamp: 0,
-    description: '',
-    tech: [],
-    githubUrl: '',
-    previewImgSrc: '',
-  },
+  // {
+  //   slug: 'vuex-webextensions',
+  //   title: 'Vuex Webextensions (open source)',
+  //   timeStamp: 0,
+  //   description: '',
+  //   tech: [],
+  //   githubUrl: '',
+  //   previewImgSrc: '',
+  // },
+  // {
+  //   slug: 'chromedriver',
+  //   title: 'Selenium Chromedriver (open source)',
+  //   timeStamp: 0,
+  //   description: '',
+  //   tech: [],
+  //   githubUrl: '',
+  //   previewImgSrc: '',
+  // },
   {
     slug: 'bex',
-    title: 'Ibotta Browser Extension',
-    timeStamp: 0,
-    description: '',
-    tech: [],
-    githubUrl: '',
-    previewImgSrc: '',
+    title: 'Ibotta Browser Extension (Contributor)',
+    timeStamp: 1639754699396, // December 2021,
+    description: 'Get cash back at your favorite stores with the help of Ibotta\'s browser extension.',
+    tech: [
+      'VueJS',
+      'Vuex',
+      'React',
+      'xState',
+      'TypeScript',
+      'Node',
+      'Jest',
+      'Puppeteer',
+      'GraphQL',
+    ],
+    githubUrl: PRIVATE,
+    previewImgSrc: '/images/portfolio/previews/ibotta-bex.png',
   },
 ];
