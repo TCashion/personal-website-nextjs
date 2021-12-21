@@ -123,7 +123,7 @@ export const projects: IProject[] = [
     ],
     APIs: ['MapBox GL API', 'Natureserve.org public data API'],
     githubUrl: 'https://github.com/TCashion/GASapp',
-    liveAppUrl: 'https://gear-acquisition-syndrome.herokuapp.com/',
+    liveAppUrl: 'https://obnoxious.herokuapp.com/',
     previewImgSrc: '/images/portfolio/previews/obnoxious.png',
   },
   {
