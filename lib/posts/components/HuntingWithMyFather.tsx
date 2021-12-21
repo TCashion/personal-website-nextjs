@@ -9,7 +9,7 @@ export const HuntingWithMyFather = () => {
       </div>
       <div className="divider"></div>
 
-      <div className="m-auto">
+      <div className="prose-container">
         <p className="prose">
           I shot my first elk in Colorado during the first rifle season in 2016.
           It was a five-day season, and I had a cow tag. I took off work unpaid
