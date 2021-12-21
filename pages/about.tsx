@@ -7,13 +7,14 @@ const About = () => {
     <Layout>
       <div className="container flex flex-col sm:flex-row">
         <div className="flex items-center">
-          <div className="image-cropper">
+          <div className="image-cropper rounded-none sm:rounded-full">
             <Image className="about-img" src={aboutMeImg} />
           </div>
         </div>
-        <div className="mx-5">
-          <h2>About Me</h2>
-          <p>
+        <div className="mx-5 about-container">
+          <h2 className="my-2">About Me</h2>
+          <div className="divider"></div>
+          <p className="my-2">
             My name is Travis Cashion. I was born and raised in the beautiful
             state of Colorado. I am a family man, a programmer, a writer, and an
             adventurer. I love to build things, learn new skills and

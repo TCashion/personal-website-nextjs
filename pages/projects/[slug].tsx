@@ -22,7 +22,7 @@ const Project = ({ project }: IProps) => {
     <Layout>
       <div className="container p-8">
         <div className="flex flex-col sm:flex-row">
-          <div className="w-full sm:w-2/3">
+          <div className="w-full sm:w-2/3 project-container">
             <Link href="/projects">
               <a className="my-4">
                 <Button innerText="<< Go Back" type="button" />
@@ -30,6 +30,7 @@ const Project = ({ project }: IProps) => {
             </Link>
             <h2 className="my-4">{project.title}</h2>
             <h3 className="my-4">{formatDate(project)}</h3>
+            <div className="divider"></div>
             <p className="my-4">{project.description}</p>
             {project.subDescription ? (
               <ul className="my-4">

@@ -14,7 +14,7 @@ const Home: NextPage = () => {
     <Layout>
       <div className="flex items-center">
         <Image src={BannerImage} height={1650} priority />
-        <div className="w-full sm:w-1/2 h-full p-8 flex flex-col absolute">
+        <div className="w-full sm:w-1/2 p-8 flex flex-col absolute">
           <div className="my-auto">
             <InvisiCard>
               <h2>Portfolio</h2>

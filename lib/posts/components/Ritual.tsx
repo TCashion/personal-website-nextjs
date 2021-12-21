@@ -9,7 +9,7 @@ export const Ritual = () => {
       </div>
       <div className="divider"></div>
 
-      <div  >
+      <div className="prose-container" >
         <div   >
           <p className="prose">
             The order of operations is always the same. We park our trucks at

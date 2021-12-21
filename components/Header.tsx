@@ -22,13 +22,13 @@ const Header = () => {
     <header className="overflow-hidden flex flex-col">
       <h1 className="hidden sm:flex self-center mt-8">Travis G. Cashion</h1>
       <Nav links={links} />
-      <p
+      <div
         id="hamburger-menu"
         className="sm:hidden mx-8 my-4 icon text-4xl"
         onClick={handleClick}
       >
         menu
-      </p>
+      </div>
       <SideNav links={links} visible={sideNavVisible} />
       <Overlay visible={sideNavVisible} handleClick={handleClick} />
     </header>
