@@ -1,19 +1,19 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 import InvisiCard from '../components/InvisiCard';
 import Button from '../components/Button';
-import BannerImage from '../public/images/home/banner_cropped.png';
 import TrekkingImage from '../public/images/home/trekking.jpg';
 import ThankYouBackgroundImage from '../public/images/home/thankyoubackground.jpg';
+import { getPlaiceholder } from 'plaiceholder';
 
-const Home: NextPage = () => {
+const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ imageProps }) => {
   return (
     <Layout>
       <div className="flex items-center">
-        <Image src={BannerImage} height={1650} priority />
+        <Image {...imageProps} height={1650} placeholder="blur" priority />
         <div className="w-full sm:w-1/2 p-8 flex flex-col absolute">
           <div className="my-auto">
             <InvisiCard>
@@ -64,6 +64,21 @@ const Home: NextPage = () => {
       </div>
     </Layout>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { base64, img } = await getPlaiceholder(
+    '/images/home/banner_cropped.png'
+  );
+
+  return {
+    props: {
+      imageProps: {
+        ...img,
+        blurDataURL: base64,
+      },
+    },
+  };
 };
 
 export default Home;
