@@ -1,19 +1,34 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 import InvisiCard from '../components/InvisiCard';
 import Button from '../components/Button';
-import BannerImage from '../public/images/home/banner_cropped.png';
-import TrekkingImage from '../public/images/home/trekking.jpg';
-import ThankYouBackgroundImage from '../public/images/home/thankyoubackground.jpg';
+import { getPlaiceholder } from 'plaiceholder';
+import { HomePageImageName } from '../types/constants';
 
-const Home: NextPage = () => {
+const pageImages = [
+  { name: HomePageImageName.TREKKING, src: '/images/home/trekking.jpg' },
+  {
+    name: HomePageImageName.THANK_YOU,
+    src: '/images/home/thankyoubackground.jpg',
+  },
+  { name: HomePageImageName.BANNER, src: '/images/home/banner_cropped.png' },
+];
+
+const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  imageProps,
+}) => {
   return (
     <Layout>
       <div className="flex items-center">
-        <Image src={BannerImage} height={1650} priority />
+        <Image
+          {...imageProps[HomePageImageName.BANNER]}
+          height={1650}
+          placeholder="blur"
+          priority
+        />
         <div className="w-full sm:w-1/2 p-8 flex flex-col absolute">
           <div className="my-auto">
             <InvisiCard>
@@ -52,10 +67,19 @@ const Home: NextPage = () => {
             </Card>
           </div>
         </div>
-        <Image src={TrekkingImage} aria-label="trekking" width={700} />
+        <Image
+          {...imageProps[HomePageImageName.TREKKING]}
+          aria-label="trekking"
+          width={700}
+          placeholder="blur"
+        />
       </div>
       <div className="flex justify-center items-center">
-        <Image src={ThankYouBackgroundImage} aria-label="thank you" />
+        <Image
+          {...imageProps[HomePageImageName.THANK_YOU]}
+          aria-label="thank you"
+          placeholder="blur"
+        />
         <div className="absolute">
           <InvisiCard>
             <h2 className="my-auto">Thank you for visiting</h2>
@@ -64,6 +88,30 @@ const Home: NextPage = () => {
       </div>
     </Layout>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const imageProps: Partial<Record<HomePageImageName, any>> = {};
+  const enrichedImageObjs = await Promise.all(
+    pageImages.map(async (imageObj) => {
+      return await getPlaiceholder(imageObj.src).then(({ base64, img }) => {
+        return { ...imageObj, img, base64 };
+      });
+    })
+  );
+
+  enrichedImageObjs.forEach((enrichedImageObj) => {
+    imageProps[enrichedImageObj.name] = {
+      ...enrichedImageObj.img,
+      blurDataURL: enrichedImageObj.base64,
+    };
+  });
+
+  return {
+    props: {
+      imageProps,
+    },
+  };
 };
 
 export default Home;

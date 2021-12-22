@@ -1,14 +1,17 @@
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import Layout from '../components/Layout';
-import aboutMeImg from '../public/images/about/Headshot.jpg';
+import { getPlaiceholder } from 'plaiceholder';
 
-const About = () => {
+const About: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  imageProps,
+}) => {
   return (
     <Layout>
       <div className="container flex flex-col sm:flex-row">
         <div className="flex items-center">
           <div className="image-cropper rounded-none sm:rounded-full">
-            <Image className="about-img" src={aboutMeImg} />
+            <Image {...imageProps} className="about-img" placeholder="blur" />
           </div>
         </div>
         <div className="mx-5 about-container">
@@ -44,6 +47,19 @@ const About = () => {
       </div>
     </Layout>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { base64, img } = await getPlaiceholder('/images/about/Headshot.jpg');
+
+  return {
+    props: {
+      imageProps: {
+        ...img,
+        blurDataURL: base64,
+      },
+    },
+  };
 };
 
 export default About;
