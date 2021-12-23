@@ -17,6 +17,7 @@ const ProjectsHome = ({ projects }: IProps) => {
       <div className="flex flex-col flex-wrap content-center px-2">
         {projects.map((project) => (
           <Link
+            key={`${project.title}-link`}
             href={'/projects/[slug]'}
             as={`/projects/${project.slug}`}
             passHref

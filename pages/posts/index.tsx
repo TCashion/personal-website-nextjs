@@ -15,15 +15,20 @@ const PostsHome = ({ posts }: IProps) => {
     <Layout>
       <div className="flex flex-wrap justify-center">
         {posts.map((post) => (
-          <Link href={'/posts/[slug]'} as={`/posts/${post.slug}`} passHref>
-              <CardWithImage
-                imageUrl={post.previewImgSrc}
-                key={post.title}
-                title={post.title}
-                subtitle={formatDate(post)}
-              >
-                <p className="mr-8">{post.preview}</p>
-              </CardWithImage>
+          <Link
+            key={`${post.title}-link`}
+            href={'/posts/[slug]'}
+            as={`/posts/${post.slug}`}
+            passHref
+          >
+            <CardWithImage
+              imageUrl={post.previewImgSrc}
+              key={post.title}
+              title={post.title}
+              subtitle={formatDate(post)}
+            >
+              <p className="mr-8">{post.preview}</p>
+            </CardWithImage>
           </Link>
         ))}
       </div>

@@ -45,4 +45,6 @@ const CardWithImage = React.forwardRef(
   }
 );
 
+CardWithImage.displayName = 'CardWithImage';
+
 export default CardWithImage;
