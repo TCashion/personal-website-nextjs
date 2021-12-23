@@ -10,7 +10,6 @@ export interface INavProps {
   visible?: boolean;
 }
 
-// TODO: replace this because it's confusing
 export interface IChildrenProps {
   children: ReactNode;
   extraClasses?: string;

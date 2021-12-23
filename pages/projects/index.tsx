@@ -22,7 +22,6 @@ const ProjectsHome = ({ projects }: IProps) => {
             passHref
           >
             <CardWithImage
-              extraClasses="shadow-light m-2"
               imageUrl={project.previewImgSrc}
               key={project.title}
               title={project.title}
