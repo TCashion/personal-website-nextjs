@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { MouseEventHandler, ReactNode } from 'react';
 
 export interface INavLink {
   label: string;
@@ -10,12 +10,18 @@ export interface INavProps {
   visible?: boolean;
 }
 
+// TODO: replace this because it's confusing
 export interface IChildrenProps {
   children: ReactNode;
   extraClasses?: string;
   title?: string;
   subtitle?: string | number | Date;
   imageUrl?: string;
+}
+
+export interface ICardWithImageProps extends IChildrenProps {
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
+  href?: string;
 }
 
 export interface ICollaborator {
