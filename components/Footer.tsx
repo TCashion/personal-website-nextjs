@@ -1,27 +1,29 @@
-const Footer = () => {
-  const socialLinks = [
-    {
-      href: 'https://www.linkedin.com/in/traviscashion/',
-      imgSrc: '/images/social/linkedin.png',
-      imgAlt: 'LinkedIn',
-    },
-    {
-      href: 'https://www.instagram.com/travis.cashion/',
-      imgSrc: '/images/social/instagram.png',
-      imgAlt: 'Instagram',
-    },
-    {
-      href: 'https://medium.com/@cashion.travisg',
-      imgSrc: '/images/social/medium.png',
-      imgAlt: 'Medium',
-    },
-    {
-      href: 'https://www.facebook.com/travcashion',
-      imgSrc: '/images/social/facebook.png',
-      imgAlt: 'Facebook',
-    },
-  ];
+import Image from 'next/image';
+import linkedInImg from '../public/images/social/linkedin.png';
+import facebookImg from '../public/images/social/facebook.png';
+import instagramImg from '../public/images/social/instagram.png';
+const socialLinks = [
+  {
+    href: 'https://www.linkedin.com/in/traviscashion/',
+    imgSrc: '/images/social/linkedin.png',
+    imgAlt: 'LinkedIn',
+    imageFile: linkedInImg,
+  },
+  {
+    href: 'https://www.instagram.com/travis.cashion/',
+    imgSrc: '/images/social/instagram.png',
+    imgAlt: 'Instagram',
+    imageFile: instagramImg,
+  },
+  {
+    href: 'https://www.facebook.com/travcashion',
+    imgSrc: '/images/social/facebook.png',
+    imgAlt: 'Facebook',
+    imageFile: facebookImg,
+  },
+];
 
+const Footer = () => {
   return (
     <footer className="overflow-hidden flex flex-row px-4 py-8 relative w-full bottom-0">
       <div className="w-1/3 hidden sm:block text-center my-auto">
@@ -40,10 +42,11 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer noopener"
             >
-              <img
-                className="h-full border-2 border-transparent border-solid rounded-lg"
-                src={link.imgSrc}
+              <Image
+                src={link.imageFile}
                 alt={link.imgAlt}
+                height={50}
+                width={50}
               />
             </a>
           ))}

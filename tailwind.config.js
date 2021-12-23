@@ -15,6 +15,7 @@ module.exports = {
       boxShadow: {
         card: '2px 2px 20px rgba(0,0,0,0.1)',
         light: '2px 2px 20px rgba(200,200,200,0.2)',
+        extralight: '2px 2px 20px rgba(200,200,200,0.5)',
       },
       colors: {
         'jade-default': '#6CA39A',
@@ -27,6 +28,7 @@ module.exports = {
       },
       maxHeight: {
         450: '450px',
+        300: '300px'
       },
       width: {
         '30%': '30%',
