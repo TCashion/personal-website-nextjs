@@ -17,7 +17,7 @@ const pageImages = [
   { name: HomePageImageName.BANNER, src: '/images/home/banner_cropped.png' },
 ];
 
-const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
+const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   imageProps,
 }) => {
   return (
@@ -114,4 +114,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default Home;
+export default HomePage;
