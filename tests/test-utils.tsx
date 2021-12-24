@@ -5,8 +5,12 @@ const Providers: FC = ({ children }) => {
   return <div>{children}</div>;
 };
 
-const customRender = (ui: ReactElement, options?: Omit<RenderOptions, 'wrapper'>) => {
-  render(ui, { wrapper: Providers, ...options });
+const customRender = (
+  ui: ReactElement,
+  options?: Omit<RenderOptions, 'wrapper'>
+) => {
+  // TODO: update this to accept options like render(ui, { wrapper: Providers, ...options });
+  render(ui);
 };
 
 export * from '@testing-library/react';
