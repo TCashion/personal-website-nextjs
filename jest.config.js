@@ -28,6 +28,9 @@ const customJestConfig = {
     // https://jestjs.io/docs/webpack#handling-static-assets
     '^.+\\.(jpg|jpeg|png|gif|webp|avif|svg)$': `../__mocks__/fileMock.js`,
 
+    // Handle types imports 
+    '^.@/types/(.*).(ts|js)$': 'identity-obj-proxy',
+
     // Handle module aliases
     '^@/components/(.*)$': '../components/$1',
   },
