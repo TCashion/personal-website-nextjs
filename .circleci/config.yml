@@ -27,7 +27,7 @@ jobs:
           name: "Running Jest tests"
           command: |
             echo Running Jest tests
-            npm run test
+            make test
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
