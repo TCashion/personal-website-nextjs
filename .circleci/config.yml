@@ -7,7 +7,6 @@ defaults: &defaults
   working_directory: ~/repo
   docker:
     - image: circleci/node:10.14.2
-    
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -26,8 +25,6 @@ jobs:
           command: "echo Hello, World!"
   
   test: 
-    # docker: 
-    #   - image: cimg/base:stable
     core:
       <<: *defaults
       working_directory: ~/repo
@@ -47,13 +44,15 @@ jobs:
       - run: npm run test
 
       - save_cache:
-                paths:
-                  - node_modules
-                key: v1-dependencies-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
 
-            - persist_to_workspace:
-                root: ~/repo
-                paths: .
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+
+
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
