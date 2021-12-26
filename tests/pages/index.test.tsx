@@ -1,4 +1,4 @@
-import { render, screen } from '../test-utils';
+import { getByText, render, screen } from '../test-utils';
 import HomePage from '../../pages';
 import { HomePageImageName } from '../../types/constants';
 
@@ -56,5 +56,51 @@ describe('HomePage', () => {
         expect(screen.getByTestId(imageTestId)).toBeDefined();
       }
     );
+  });
+
+  describe('nav header', () => {
+    it('renders the nav header', () => {
+      render(<HomePage imageProps={imageProps} />);
+  
+      const navHeaderEl = screen.getByTestId('header-nav');
+      expect(navHeaderEl).toBeDefined();
+    });
+    
+    it('renders the links with expected text', () => {
+      render(<HomePage imageProps={imageProps} />);
+  
+      const navHeaderEl = screen.getByTestId('header-nav');
+  
+      ['Home', 'Portfolio', 'Blog', 'About'].forEach((navLinkText) => {
+        expect(getByText(navHeaderEl, navLinkText)).toBeDefined();
+      });
+    });
+  })
+
+  describe('footer', () => {
+    it('renders the footer', () => {
+      render(<HomePage imageProps={imageProps} />);
+
+      const footerEl = screen.getByTestId('footer');
+      expect(footerEl).toBeDefined();
+    });
+
+    it('renders the expected text', () => {
+      render(<HomePage imageProps={imageProps} />);
+
+      const footerEl = screen.getByTestId('footer');
+
+      ['Designed & built by Travis Cashion', 'Travis G. Cashion'].forEach(
+        (footerText) => {
+          expect(getByText(footerEl, footerText)).toBeDefined();
+        }
+      );
+    });
+
+    it('renders the social links', () => {
+      render(<HomePage imageProps={imageProps} />);
+
+      expect(screen.getByTestId('social-links-container')).toBeDefined();
+    });
   });
 });
