@@ -25,7 +25,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="overflow-hidden flex flex-row px-4 py-8 relative w-full bottom-0">
+    <footer className="overflow-hidden flex flex-row px-4 py-8 relative w-full bottom-0" data-testid="footer">
       <div className="w-1/3 hidden sm:block text-center my-auto">
         <h3>Travis G. Cashion</h3>
       </div>
@@ -33,7 +33,7 @@ const Footer = () => {
         <p>Designed & built by Travis Cashion</p>
       </div>
       <div className="w-full sm:w-1/3 flex text-center">
-        <div className="flex flex-row m-auto">
+        <div className="flex flex-row m-auto" data-testid="social-links-container">
           {socialLinks.map((link, idx) => (
             <a
               className="mx-2 my-auto h-8"
