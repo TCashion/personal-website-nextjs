@@ -24,13 +24,12 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
   
-  test: 
-    core:
-      <<: *defaults
-      working_directory: ~/repo
+  test:
+    <<: *defaults
+    working_directory: ~/repo
 
-    steps: 
-      - checkout 
+    steps:
+      - checkout
 
       # Download and cache dependencies
       - restore_cache:
@@ -41,7 +40,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run test
+      - run: npm run test:ci
 
       - save_cache:
           paths:
