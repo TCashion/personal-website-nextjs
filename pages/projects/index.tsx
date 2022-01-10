@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Layout from '../../components/Layout';
 import CardWithImage from '../../components/CardWithImage';
-import Button from '../../components/Button';
 import { byNewestFirst, formatDate } from '../../lib/helpers';
 import { IProject } from '../../types/types';
 import { GetStaticProps } from 'next';

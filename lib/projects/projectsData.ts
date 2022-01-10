@@ -184,7 +184,8 @@ export const projects: IProject[] = [
     slug: 'bex',
     title: 'Ibotta Browser Extension (Contributor)',
     timeStamp: 1639754699396, // December 2021,
-    description: 'Get cash back at your favorite stores with the help of Ibotta\'s browser extension.',
+    description:
+      "Get cash back at your favorite stores with the help of Ibotta's browser extension.",
     tech: [
       'VueJS',
       'Vuex',
@@ -200,3 +201,7 @@ export const projects: IProject[] = [
     previewImgSrc: '/images/portfolio/previews/ibotta-bex.png',
   },
 ];
+
+export const herokuProjectsUrls = projects
+  .filter((project) => project.liveAppUrl?.includes('heroku'))
+  .map((herokuProject) => herokuProject.liveAppUrl);
