@@ -8,7 +8,6 @@ function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     if (!wakeUpCalled) {
-      console.log(herokuProjectsUrls);
       herokuProjectsUrls.forEach((projectUrl) => {
         if (projectUrl) {
           fetch(projectUrl, { mode: 'no-cors' }).then((res) =>
