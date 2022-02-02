@@ -1,0 +1,5 @@
+{
+  "env": {
+    "localServerURL": "http://localhost:3000/"
+  }
+}
