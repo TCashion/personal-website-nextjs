@@ -1,10 +1,12 @@
 /// <reference types="cypress" />
 
 describe('routing', () => {
+  beforeEach(() => {
+    cy.visit(Cypress.env('localServerURL'));
+  })
+
   describe('the main nav bar', () => {
     it('routes appropriately', () => {
-      cy.visit(Cypress.env('localServerURL'));
-
       cy.get('[data-test-id="main-nav-portfolio"]').click();
       cy.url().should('include', '/projects');
 
@@ -25,8 +27,6 @@ describe('routing', () => {
     });
 
     it('routes appropriately', () => {
-      cy.visit(Cypress.env('localServerURL'));
-
       cy.get('[data-test-id="hamburger-menu"]').click();
       cy.get('[data-test-id="side-nav-portfolio"]').click();
       cy.url().should('include', '/projects');
