@@ -2,6 +2,8 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+orbs:
+  cypress: cypress-io/cypress@1
 
 defaults: &defaults
   working_directory: ~/repo
@@ -23,8 +25,11 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+
+  cypress/install:
+    build: 'npm run build'
   
-  test:
+  jest-test:
     <<: *defaults
     working_directory: ~/repo
 
@@ -51,11 +56,13 @@ jobs:
           root: ~/repo
           paths: .
 
+  e2e-test:
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  build:
     jobs:
       - say-hello
-      - test
+      - cypress/install
+      - jest-test

@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test": "jest",
+    "e2e": "npx cypress run"
   },
   "dependencies": {
     "@plaiceholder/next": "^2.2.0",
