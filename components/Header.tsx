@@ -23,6 +23,7 @@ const Header = () => {
       <h1 className="hidden sm:flex self-center mt-8">Travis G. Cashion</h1>
       <Nav links={links} />
       <div
+        data-test-id="hamburger-menu"
         id="hamburger-menu"
         className="sm:hidden mx-8 my-4 icon text-4xl"
         onClick={handleClick}

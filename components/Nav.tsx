@@ -6,9 +6,12 @@ const Nav = ({ links }: INavProps) => {
     <nav className="hidden sm:flex justify-center m-4" data-testid="header-nav">
       <ul className="flex">
         {links.map((link) => (
-          <li className="pr-8 pl-8 text-xl" key={`nav-link-${link.href}-${link.label}`}>
+          <li
+            className="pr-8 pl-8 text-xl"
+            key={`nav-link-${link.href}-${link.label}`}
+          >
             <Link href={link.href}>
-              <a>{link.label}</a>
+              <a data-test-id={`main-nav-${link.label.toLowerCase()}`}>{link.label}</a>
             </Link>
           </li>
         ))}

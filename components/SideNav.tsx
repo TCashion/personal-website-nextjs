@@ -16,7 +16,7 @@ const Sidenav = ({ links, visible }: INavProps) => {
               key={`nav-link-${link.href}-${link.label}`}
             >
               <Link href={link.href}>
-                <a aria-label={link.label} className="text-xl">
+                <a data-test-id={`side-nav-${link.label.toLowerCase()}`} aria-label={link.label} className="text-xl">
                   {link.label}
                 </a>
               </Link>

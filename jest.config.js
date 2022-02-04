@@ -34,7 +34,7 @@ const customJestConfig = {
     // Handle module aliases
     '^@/components/(.*)$': '../components/$1',
   },
-  testPathIgnorePatterns: ['../node_modules/', '../.next/'],
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/', '<rootDir>/cypress/'],
   testEnvironment: 'jsdom',
   transform: {
     // Use babel-jest to transpile tests with the next/babel preset
