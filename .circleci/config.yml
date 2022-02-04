@@ -51,7 +51,7 @@ jobs:
           root: ~/repo
           paths: .
 
-  build:
+  e2e-test:
     docker:
       - image: cypress/base:14.16.0
         environment:
@@ -74,6 +74,10 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
+      # start the server
+      - run: 
+          command: npm serve
+          background: true
       - run: $(npm bin)/cypress run
 
 # Invoke jobs via workflows
@@ -83,4 +87,4 @@ workflows:
     jobs:
       - say-hello
       - jest-test
-      - build
+      - e2e-test
