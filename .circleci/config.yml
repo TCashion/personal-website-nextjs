@@ -76,7 +76,6 @@ jobs:
       # start the server
       - run: 
           command: npm run serve
-          background: true
       - run: $(npm bin)/cypress run
 
 # Invoke jobs via workflows
