@@ -78,7 +78,7 @@ jobs:
           command: npm run build
       # start the server
       - run: 
-          command: npm run build
+          command: npm run start
           background: true
       - run: $(npm bin)/cypress run
 
