@@ -73,9 +73,13 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
+      # build the app
+      - run: 
+          command: npm run build
       # start the server
       - run: 
-          command: npm run serve
+          command: npm run build
+          background: true
       - run: $(npm bin)/cypress run
 
 # Invoke jobs via workflows
