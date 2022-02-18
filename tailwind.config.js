@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaulttheme')
+
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
@@ -21,19 +23,15 @@ module.exports = {
         'jade-default': '#6CA39A',
         'jade-darker': '#4A706A',
       },
-      container: {
-        screens: {
-          '3xl': '1600px',
-        },
+      screens: {
+        ...defaultTheme.screens, 
+        '3xl': '1600px',
       },
       maxHeight: {
         // TODO: can these be generated dynamically?
         450: '450px',
         300: '300px',
         840: '840px',
-      },
-      screen: {
-        90: '90vh',
       },
       width: {
         '30%': '30%',
