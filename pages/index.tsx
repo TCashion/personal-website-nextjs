@@ -27,15 +27,17 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <Layout>
       <div data-testid="home-container">
-        <div className="h-screen flex max-h-840">
+        <div className="lg:h-screen flex max-h-840">
           <div>
             <Image
               {...imageProps[HomePageImageName.HEADSHOT]}
+              height={840}
+              width={776}
               priority
               data-testid="home-headshot-image"
             />
           </div>
-          <div className="flex items-center justify-center w-full">
+          <div className="flex items-center justify-center m-auto">
             <h2>Hello, world!</h2>
           </div>
         </div>
