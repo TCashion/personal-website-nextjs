@@ -8,7 +8,7 @@ import Button from '../components/Button';
 import { getPlaiceholder } from 'plaiceholder';
 import { HomePageImageName } from '../types/constants';
 
-const pageImages = [
+export const pageImages = [
   {
     name: HomePageImageName.HEADSHOT,
     src: '/images/home/headshot_cropped_bw.png',
@@ -35,10 +35,11 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
             {...imageProps[HomePageImageName.HEADSHOT]}
             height={840}
             width={760}
+            placeholder="blur"
             priority
             data-testid="home-headshot-image"
           />
-          <div className="hidden lg:block flex items-center justify-center m-auto">
+          <div className="hidden lg:flex items-center justify-center m-auto">
             <h1 className="mx-5 text-secondary italic opacity-75 text-4xl lg:text-6xl">
               Welcome
             </h1>
