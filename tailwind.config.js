@@ -1,5 +1,3 @@
-const defaultTheme = require('tailwindcss/defaulttheme')
-
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
@@ -23,9 +21,10 @@ module.exports = {
         'jade-default': '#6CA39A',
         'jade-darker': '#4A706A',
       },
-      screens: {
-        ...defaultTheme.screens, 
-        '3xl': '1600px',
+      container: {
+        screens: {
+          '3xl': '1600px',
+        },
       },
       maxHeight: {
         // TODO: can these be generated dynamically?
