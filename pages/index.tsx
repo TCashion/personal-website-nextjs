@@ -9,6 +9,10 @@ import { getPlaiceholder } from 'plaiceholder';
 import { HomePageImageName } from '../types/constants';
 
 const pageImages = [
+  {
+    name: HomePageImageName.HEADSHOT,
+    src: '/images/home/headshot_cropped_bw.png',
+  },
   { name: HomePageImageName.TREKKING, src: '/images/home/trekking.jpg' },
   {
     name: HomePageImageName.THANK_YOU,
@@ -23,12 +27,23 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <Layout>
       <div data-testid="home-container">
+        <div className="h-screen flex max-h-840">
+          <div>
+            <Image
+              {...imageProps[HomePageImageName.HEADSHOT]}
+              priority
+              data-testid="home-headshot-image"
+            />
+          </div>
+          <div className="flex items-center justify-center w-full">
+            <h2>Hello, world!</h2>
+          </div>
+        </div>
         <div className="flex items-center">
           <Image
             {...imageProps[HomePageImageName.BANNER]}
             height={1650}
             placeholder="blur"
-            priority
             data-testid="banner-image"
           />
           <div className="w-full sm:w-1/2 p-8 flex flex-col absolute">
