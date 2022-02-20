@@ -21,6 +21,7 @@ const Layout = ({ children }: IChildrenProps) => {
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
         />
+        <meta name="description" content="Travis Cashion's personal portfolio website."></meta>
       </Head>
       <Header />
       <section className="container mx-auto">{children}</section>
