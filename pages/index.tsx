@@ -8,7 +8,11 @@ import Button from '../components/Button';
 import { getPlaiceholder } from 'plaiceholder';
 import { HomePageImageName } from '../types/constants';
 
-const pageImages = [
+export const pageImages = [
+  {
+    name: HomePageImageName.HEADSHOT,
+    src: '/images/home/headshot_cropped_bw.png',
+  },
   { name: HomePageImageName.TREKKING, src: '/images/home/trekking.jpg' },
   {
     name: HomePageImageName.THANK_YOU,
@@ -23,12 +27,30 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <Layout>
       <div data-testid="home-container">
+        <div
+          className="flex max-h-840"
+          style={{ background: 'linear-gradient(#1a202c, 35%, #e2e8f0)' }}
+        >
+          <Image
+            {...imageProps[HomePageImageName.HEADSHOT]}
+            height={840}
+            width={760}
+            placeholder="blur"
+            priority
+            data-testid="home-headshot-image"
+            className="opacity-75"
+          />
+          <div className="hidden lg:flex items-center justify-center m-auto">
+            <h1 className="mx-5 text-secondary italic opacity-75 text-6xl">
+              Welcome
+            </h1>
+          </div>
+        </div>
         <div className="flex items-center">
           <Image
             {...imageProps[HomePageImageName.BANNER]}
             height={1650}
             placeholder="blur"
-            priority
             data-testid="banner-image"
           />
           <div className="w-full sm:w-1/2 p-8 flex flex-col absolute">
@@ -48,10 +70,7 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
             </div>
           </div>
         </div>
-        <div
-          className="flex flex-col sm:flex-row py-8"
-          style={{ height: '675px' }}
-        >
+        <div className="flex flex-col sm:flex-row py-8 sm:py-0" style={{ height: '675px' }}>
           <div className="w-full sm:1/2 h-full p-8 flex flex-col">
             <div className="my-auto">
               <Card extraClasses="shadow-light">
@@ -72,7 +91,7 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <Image
             {...imageProps[HomePageImageName.TREKKING]}
             aria-label="trekking"
-            width={700}
+            width={775}
             placeholder="blur"
             data-testid="trekking-image"
           />

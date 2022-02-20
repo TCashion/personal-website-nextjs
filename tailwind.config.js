@@ -4,7 +4,7 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: {
-    // enabled: true,
+    enabled: true,
     content: [
       './components/**/*.{js,ts,jsx,tsx}',
       './pages/**/*.{js,ts,jsx,tsx}',
@@ -23,19 +23,21 @@ module.exports = {
       },
       container: {
         screens: {
-          xl: '1600px',
+          '3xl': '1600px',
         },
       },
       maxHeight: {
+        // TODO: can these be generated dynamically?
         450: '450px',
-        300: '300px'
+        300: '300px',
+        840: '840px',
       },
       width: {
         '30%': '30%',
       },
       maxWidth: {
-        900: '900px' 
-      }
+        900: '900px',
+      },
     },
   },
   variants: {},

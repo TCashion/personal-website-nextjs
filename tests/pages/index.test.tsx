@@ -1,33 +1,18 @@
 import { getByText, render, screen } from '../test-utils';
-import HomePage from '../../pages';
-import { HomePageImageName } from '../../types/constants';
+import HomePage, { pageImages } from '../../pages';
 
-const imageProps = {
-  [HomePageImageName.BANNER]: {
-    src: '/images/home/banner_cropped.png',
+// Create dummy image props to pass to HomePage component
+const imageProps: any = {};
+pageImages.forEach((image) => {
+  imageProps[image.name] = {
+    src: image.src,
     width: 3024,
     height: 1816,
     type: 'png',
     blurDataURL:
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVQImWNInr7t4P//W17+d3Q3YWBgYijICtm2blZOpgEAsWwL+7IvmWAAAAAASUVORK5CYII=',
-  },
-  [HomePageImageName.THANK_YOU]: {
-    src: '/images/home/thank-you.jpg',
-    width: 3024,
-    height: 1816,
-    type: 'png',
-    blurDataURL:
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVQImWNInr7t4P//W17+d3Q3YWBgYijICtm2blZOpgEAsWwL+7IvmWAAAAAASUVORK5CYII=',
-  },
-  [HomePageImageName.TREKKING]: {
-    src: '/images/home/trekking.jpg',
-    width: 3024,
-    height: 1816,
-    type: 'png',
-    blurDataURL:
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVQImWNInr7t4P//W17+d3Q3YWBgYijICtm2blZOpgEAsWwL+7IvmWAAAAAASUVORK5CYII=',
-  },
-};
+  };
+});
 
 describe('HomePage', () => {
   it('renders', () => {
@@ -40,6 +25,7 @@ describe('HomePage', () => {
     render(<HomePage imageProps={imageProps} />);
 
     [
+      'Welcome',
       'I love solving problems with code. Check out my portfolio to see my projects.',
       "I love to write about things that excite me, adventures I've had, and some of my most poignant memories. In my blog, I share thoughts and stories that are meaningful to me.",
       'Thank you for visiting',
@@ -51,31 +37,34 @@ describe('HomePage', () => {
   it('renders the images', () => {
     render(<HomePage imageProps={imageProps} />);
 
-    ['banner-image', 'trekking-image', 'thank-you-image'].forEach(
-      (imageTestId) => {
-        expect(screen.getByTestId(imageTestId)).toBeDefined();
-      }
-    );
+    [
+      'home-headshot-image',
+      'banner-image',
+      'trekking-image',
+      'thank-you-image',
+    ].forEach((imageTestId) => {
+      expect(screen.getByTestId(imageTestId)).toBeDefined();
+    });
   });
 
   describe('nav header', () => {
     it('renders the nav header', () => {
       render(<HomePage imageProps={imageProps} />);
-  
+
       const navHeaderEl = screen.getByTestId('header-nav');
       expect(navHeaderEl).toBeDefined();
     });
-    
+
     it('renders the links with expected text', () => {
       render(<HomePage imageProps={imageProps} />);
-  
+
       const navHeaderEl = screen.getByTestId('header-nav');
-  
+
       ['Home', 'Portfolio', 'Blog', 'About'].forEach((navLinkText) => {
         expect(getByText(navHeaderEl, navLinkText)).toBeDefined();
       });
     });
-  })
+  });
 
   describe('footer', () => {
     it('renders the footer', () => {

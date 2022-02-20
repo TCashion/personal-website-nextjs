@@ -130,6 +130,10 @@ a {
     @apply text-gray-100;
   }
 
+  .text-secondary {
+    @apply text-gray-900;
+  }
+
   .blog-article p,
   .blog-article h1,
   .blog-article h2 {
