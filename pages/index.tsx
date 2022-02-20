@@ -28,7 +28,7 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
     <Layout>
       <div data-testid="home-container">
         <div
-          className="lg:h-screen flex max-h-840"
+          className="flex max-h-840"
           style={{ background: 'linear-gradient(#1a202c, 35%, #e2e8f0)' }}
         >
           <Image
