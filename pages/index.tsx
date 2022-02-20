@@ -38,9 +38,10 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
             placeholder="blur"
             priority
             data-testid="home-headshot-image"
+            className="opacity-75"
           />
           <div className="hidden lg:flex items-center justify-center m-auto">
-            <h1 className="mx-5 text-secondary italic opacity-75 text-4xl lg:text-6xl">
+            <h1 className="mx-5 text-secondary italic opacity-75 text-6xl">
               Welcome
             </h1>
           </div>

@@ -25,6 +25,7 @@ describe('HomePage', () => {
     render(<HomePage imageProps={imageProps} />);
 
     [
+      'Welcome',
       'I love solving problems with code. Check out my portfolio to see my projects.',
       "I love to write about things that excite me, adventures I've had, and some of my most poignant memories. In my blog, I share thoughts and stories that are meaningful to me.",
       'Thank you for visiting',
@@ -36,11 +37,14 @@ describe('HomePage', () => {
   it('renders the images', () => {
     render(<HomePage imageProps={imageProps} />);
 
-    ['banner-image', 'trekking-image', 'thank-you-image'].forEach(
-      (imageTestId) => {
-        expect(screen.getByTestId(imageTestId)).toBeDefined();
-      }
-    );
+    [
+      'home-headshot-image',
+      'banner-image',
+      'trekking-image',
+      'thank-you-image',
+    ].forEach((imageTestId) => {
+      expect(screen.getByTestId(imageTestId)).toBeDefined();
+    });
   });
 
   describe('nav header', () => {
