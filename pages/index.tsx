@@ -12,13 +12,23 @@ export const pageImages = [
   {
     name: HomePageImageName.HEADSHOT,
     src: '/images/home/headshot_cropped_bw.png',
+    alt: 'Picture of Travis Cashion',
   },
-  { name: HomePageImageName.TREKKING, src: '/images/home/trekking.jpg' },
+  {
+    name: HomePageImageName.TREKKING,
+    src: '/images/home/trekking.jpg',
+    alt: 'Person hiking along a mountain',
+  },
   {
     name: HomePageImageName.THANK_YOU,
     src: '/images/home/thankyoubackground.jpg',
+    alt: 'Background image of a fallen tree',
   },
-  { name: HomePageImageName.BANNER, src: '/images/home/banner_cropped.png' },
+  {
+    name: HomePageImageName.BANNER,
+    src: '/images/home/banner_cropped.png',
+    alt: 'Background image of a tree and mountains',
+  },
 ];
 
 const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
@@ -70,7 +80,10 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
             </div>
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row py-8 sm:py-0" style={{ height: '675px' }}>
+        <div
+          className="flex flex-col sm:flex-row py-8 sm:py-0"
+          style={{ height: '675px' }}
+        >
           <div className="w-full sm:1/2 h-full p-8 flex flex-col">
             <div className="my-auto">
               <Card extraClasses="shadow-light">
