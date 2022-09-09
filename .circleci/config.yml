@@ -74,6 +74,5 @@ jobs:
 workflows:
   ci-workflow:
     jobs:
-      - say-hello
       - jest-test
       - e2e-test
