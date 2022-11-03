@@ -7,6 +7,7 @@ import { Ritual } from './Ritual';
 import { MostImportantQuestion } from './MostImportantQuestion';
 import { WhereIsTheFear } from './WhereIsTheFear';
 import { WornOutBoots } from './WornOutBoots';
+import { LearningGolang } from './LearningGolang';
 
 export {
   LetterToMyPreBootcampSelf,
@@ -18,4 +19,5 @@ export {
   MostImportantQuestion,
   WhereIsTheFear,
   WornOutBoots,
+  LearningGolang,
 };
