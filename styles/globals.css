@@ -9,7 +9,7 @@ body {
 
 a {
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 * {
@@ -149,7 +149,7 @@ a {
     @apply list-disc ml-10;
   }
 
-  a, section li > a {
+  p > a, section li > a {
     @apply underline;
   }
 
