@@ -149,7 +149,7 @@ a {
     @apply list-disc ml-10;
   }
 
-  section li > a {
+  p > a, section li > a {
     @apply underline;
   }
 

@@ -82,6 +82,12 @@ export const postsData: IPost[] = [
       'The condition of a hunter’s boots is directly correlated to effort expended in the field. It takes time and mileage to wear out a good pair...',
     componentName: 'WornOutBoots',
   },
+  {
+    slug: 'go-lang',
+    timeStamp: 1667486292000,
+    title: 'What I Learned from Learning GoLang',
+    componentName: 'LearningGolang',
+  },
 ];
 
 export const getOnePostData = (slug: string): IPost | undefined => {

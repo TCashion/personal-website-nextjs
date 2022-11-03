@@ -47,6 +47,9 @@ const Post = ({ post }: IProps) => {
             {post.componentName === 'WornOutBoots' && (
               <PostComponents.WornOutBoots />
             )}
+            {post.componentName === 'LearningGolang' && (
+              <PostComponents.LearningGolang />
+            )}
           </div>
         </div>
       </div>
