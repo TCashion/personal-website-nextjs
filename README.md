@@ -36,6 +36,28 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 
+## Testing
+
+Run jest tests with: 
+
+```sh
+npm run test
+```
+
+Run Cypress e2e tests with
+
+```sh
+$ npm run dev 
+$ npm run e2e
+```
+
+## CI
+
+Tests will run on CircleCI.
+
+Deployment will run on Vercel with each commit. 
+
+
 ## Developer Notes: TODO
 
 * Mobile responsiveness (round images, etc)
