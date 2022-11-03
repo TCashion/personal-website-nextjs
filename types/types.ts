@@ -11,7 +11,7 @@ export interface INavProps {
 }
 
 export interface IChildrenProps {
-  children: ReactNode;
+  children?: ReactNode;
   extraClasses?: string;
   title?: string;
   subtitle?: string | number | Date;
@@ -19,6 +19,12 @@ export interface IChildrenProps {
 }
 
 export interface ICardWithImageProps extends IChildrenProps {
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
+  href?: string;
+}
+
+
+export interface IBlogLinkProps extends IChildrenProps {
   onClick?: MouseEventHandler<HTMLAnchorElement>;
   href?: string;
 }

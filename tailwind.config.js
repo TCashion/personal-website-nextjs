@@ -27,7 +27,6 @@ module.exports = {
         },
       },
       maxHeight: {
-        // TODO: can these be generated dynamically?
         450: '450px',
         300: '300px',
         840: '840px',
@@ -36,6 +35,7 @@ module.exports = {
         '30%': '30%',
       },
       maxWidth: {
+        850: '850px',
         900: '900px',
       },
     },

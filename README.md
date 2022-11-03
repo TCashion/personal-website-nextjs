@@ -4,11 +4,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 First, run the development server:
 
-```bash
+```sh
 npm run dev
 # or
 yarn dev
 ```
+
+`package.json` has other scripts for building and serving locally. 
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -32,6 +34,28 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## Testing
+
+Run jest tests with: 
+
+```sh
+npm run test
+```
+
+Run Cypress e2e tests with
+
+```sh
+$ npm run dev 
+$ npm run e2e
+```
+
+## CI
+
+Tests will run on CircleCI.
+
+Deployment will run on Vercel with each commit. 
 
 
 ## Developer Notes: TODO
