@@ -11,7 +11,7 @@ const Nav = ({ links }: INavProps) => {
             key={`nav-link-${link.href}-${link.label}`}
           >
             <Link href={link.href}>
-              <a data-test-id={`main-nav-${link.label.toLowerCase()}`}>{link.label}</a>
+              <span data-test-id={`main-nav-${link.label.toLowerCase()}`}>{link.label}</span>
             </Link>
           </li>
         ))}
