@@ -8,11 +8,12 @@
     "serve": "next build && next start",
     "lint": "next lint",
     "test": "jest",
-    "e2e": "npx cypress run"
+    "e2e": "npx cypress run",
+    "e2e-i": "npx cypress open"
   },
   "dependencies": {
     "@plaiceholder/next": "^2.5.0",
-    "next": "12.3.1",
+    "next": "^14.0.4",
     "plaiceholder": "^2.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",

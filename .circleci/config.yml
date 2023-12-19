@@ -40,7 +40,7 @@ jobs:
 
   e2e-test:
     docker:
-      - image: cypress/base:14.16.0
+      - image: cypress/base:20.9.0
         environment:
           ## this enables colors in the output
           TERM: xterm
@@ -67,7 +67,7 @@ jobs:
       - run: 
           command: npm run start
           background: true
-      - run: $(npm bin)/cypress run
+      - run: npx cypress run
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
