@@ -14,7 +14,7 @@ export interface IChildrenProps {
   children?: ReactNode;
   extraClasses?: string;
   title?: string;
-  subtitle?: string | number | Date;
+  subtitle?: string;
   imageUrl?: string;
 }
 
