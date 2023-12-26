@@ -24,9 +24,9 @@ const Project = ({ project }: IProps) => {
         <div className="flex flex-col sm:flex-row">
           <div className="w-full sm:w-2/3 project-container">
             <Link href="/projects">
-              <a className="my-4">
+              <span className="my-4">
                 <Button innerText="<< Go Back" type="button" />
-              </a>
+              </span>
             </Link>
             <h2 className="my-4">{project.title}</h2>
             <h3 className="my-4">{formatDate(project)}</h3>

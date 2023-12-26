@@ -72,9 +72,9 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   see my projects.
                 </p>
                 <Link href="/projects">
-                  <a>
+                  <span>
                     <Button innerText="Portfolio" type="button" />
-                  </a>
+                  </span>
                 </Link>
               </InvisiCard>
             </div>
@@ -94,9 +94,9 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   blog, I share thoughts and stories that are meaningful to me.
                 </p>
                 <Link href="/posts">
-                  <a>
+                  <span>
                     <Button innerText="Blog" type="button" />
-                  </a>
+                  </span>
                 </Link>
               </Card>
             </div>

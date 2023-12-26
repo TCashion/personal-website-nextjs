@@ -19,9 +19,9 @@ const Post = ({ post }: IProps) => {
           <div className="w-full">
             <div className="blog-go-back-container">
               <Link href="/posts">
-                <a className="my-4">
+                <span className="my-4">
                   <Button innerText="<< Go Back" type="button" />
-                </a>
+                </span>
               </Link>
             </div>
             {post.componentName === 'LetterToMyPreBootcampSelf' && (
