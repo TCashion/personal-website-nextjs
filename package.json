@@ -23,7 +23,7 @@
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^14.1.2",
     "@types/node": "20.11.24",
-    "@types/react": "18.2.47",
+    "@types/react": "18.2.63",
     "@typescript-eslint/parser": "^6.19.0",
     "babel-jest": "^29.4.3",
     "cypress": "^13.6.1",
