@@ -19,9 +19,9 @@ const About: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <div className="divider"></div>
           <p className="my-2">
             My name is Travis Cashion. I was born and raised in the beautiful
-            state of Colorado. I am a family man, a programmer, a writer, and an
-            adventurer. I love to build things, learn new skills and
-            technologies, and spend time in nature.
+            state of Colorado. I am a father, a family man, a software engineer,
+            a writer, and a student of life. I love to investigate and discover;
+            solve puzzles; learn new skills; and spend time in nature.
           </p>
           <p>
             <br />
@@ -37,7 +37,7 @@ const About: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <li>Business</li>
             <li>Hunting, fishing, wildlife, nature & the outdoors</li>
             <li>Cooking</li>
-            <li>Fitness: endurance training, lifting, kettlebells</li>
+            <li>Brazilian Jiu-Jitsu</li>
             <li>Travelling</li>
             <li>Dogs</li>
             <li>Spanish</li>

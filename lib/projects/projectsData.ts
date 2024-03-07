@@ -200,6 +200,22 @@ export const projects: IProject[] = [
     githubUrl: PRIVATE,
     previewImgSrc: '/images/portfolio/previews/ibotta-bex.png',
   },
+  {
+    slug: 'leftover-tag-scraper',
+    title: 'Leftover Tag Scraper',
+    timeStamp: 1699538699396, // November 2023
+    description:
+      "Scrape the Colorado Parks and Wildlife leftover tag list to find out what's available. Then, send an email to subscribers using Twilio's SendGrid platform.",
+    tech: [
+      'Python',
+      'Pub/Sub',
+      'GCP Cloud Functons',
+      'Firestore',
+      'Twilio/Sendgrid integration',
+    ],
+    githubUrl: PRIVATE,
+    previewImgSrc: '/images/portfolio/previews/leftover-tag-scraper.png',
+  },
 ];
 
 export const herokuProjectsUrls = projects
