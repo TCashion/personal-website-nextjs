@@ -15,15 +15,15 @@
     "@plaiceholder/next": "^2.5.0",
     "next": "^14.2.13",
     "plaiceholder": "^2.5.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "sharp": "^0.32.6"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^15.0.7",
     "@types/node": "22.4.1",
-    "@types/react": "18.2.63",
+    "@types/react": "18.3.4",
     "@typescript-eslint/parser": "^7.5.0",
     "babel-jest": "^29.4.3",
     "cypress": "^13.11.0",
