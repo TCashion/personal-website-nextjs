@@ -222,10 +222,11 @@ export const projects: IProject[] = [
     title: 'Caterpillar Browser Extension',
     timeStamp: 1699538699396, // November 2023
     description:
-      'Caterpillar is a browser extension extension designed to extend the capabilities of the Monarch Financial website. Specifically, the extension scrapes your Amazon orders page in order to help users categorize Amazon purchases in Monarch. This project is available to the public at: https://chromewebstore.google.com/detail/Caterpillar/dnfglmkaoemhjbgpnpkpjlkckinkokin.',
+      'Caterpillar is a browser extension extension designed to extend the capabilities of the Monarch Financial website. Specifically, the extension scrapes your Amazon orders page in order to help users categorize Amazon purchases in Monarch. This project is available to the public on the Chrome web store.',
     tech: ['React', 'TypeScript', 'NextJs'],
     githubUrl: PRIVATE,
     previewImgSrc: '/images/portfolio/previews/monarch.png',
+    liveAppUrl: 'https://chromewebstore.google.com/detail/Caterpillar/dnfglmkaoemhjbgpnpkpjlkckinkokin',
   },
 ];
 
