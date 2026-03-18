@@ -21,7 +21,8 @@ describe('routing', () => {
 
       cy.get('[data-test-id="main-nav-home"]').click();
       cy.url().should('equal', Cypress.env('localServerURL'));
-      cy.contains('h1', 'Welcome').should('be.visible');
+      cy.get('[data-testid="home-container"]').should('exist');
+      cy.contains('h2', 'Portfolio').should('exist');
     });
   });
 
@@ -49,7 +50,8 @@ describe('routing', () => {
       cy.get('[data-test-id="hamburger-menu"]').click();
       cy.get('[data-test-id="side-nav-home"]').click();
       cy.url().should('equal', Cypress.env('localServerURL'));
-      cy.contains('h1', 'Welcome').should('be.visible');
+      cy.get('[data-testid="home-container"]').should('exist');
+      cy.contains('h2', 'Portfolio').should('exist');
     });
   });
 
