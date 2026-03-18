@@ -1,11 +1,17 @@
 /** @type {import('next').NextConfig} */
-
-const { withPlaiceholder } = require('@plaiceholder/next');
-
-module.exports = withPlaiceholder({
+const nextConfig = {
   reactStrictMode: true,
   i18n: {
     locales: ['en'],
     defaultLocale: 'en',
   },
-});
+  turbopack: {
+    root: __dirname,
+  },
+};
+
+module.exports = async () => {
+  const { default: withPlaiceholder } = await import('@plaiceholder/next');
+
+  return withPlaiceholder(nextConfig);
+};

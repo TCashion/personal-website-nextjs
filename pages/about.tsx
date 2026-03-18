@@ -1,5 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import Layout from '../components/Layout';
 import { getPlaiceholder } from 'plaiceholder';
 
@@ -11,7 +13,12 @@ const About: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
       <div className="container flex flex-col sm:flex-row">
         <div className="flex items-center">
           <div className="image-cropper rounded-none sm:rounded-full">
-            <Image {...imageProps} className="about-img" placeholder="blur" />
+            <Image
+              {...imageProps}
+              alt="Picture of Travis Cashion"
+              className="about-img"
+              placeholder="blur"
+            />
           </div>
         </div>
         <div className="mx-5 about-container">
@@ -50,12 +57,16 @@ const About: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { base64, img } = await getPlaiceholder('/images/about/Headshot.jpg');
+  const src = '/images/about/Headshot.jpg';
+  const buffer = await fs.readFile(path.join(process.cwd(), 'public', src));
+  const { base64, metadata } = await getPlaiceholder(buffer);
 
   return {
     props: {
       imageProps: {
-        ...img,
+        src,
+        width: metadata.width,
+        height: metadata.height,
         blurDataURL: base64,
       },
     },
