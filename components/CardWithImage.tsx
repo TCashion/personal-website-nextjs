@@ -8,7 +8,7 @@ const CardWithImage = React.forwardRef(
     imageUrl,
     title,
     subtitle,
-  }: ICardWithImageProps) => {
+  }: ICardWithImageProps, _ref) => {
     const className = `shadow-light hover:shadow-extralight text-left overflow-hidden bg-secondary rounded-lg m-4 max-w-900 max-h-full sm:max-h-300  ${extraClasses}`;
 
     return (

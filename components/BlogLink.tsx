@@ -2,7 +2,7 @@ import React from 'react';
 import { IBlogLinkProps } from '../types/types';
 
 const BlogLink = React.forwardRef(
-  ({ children, title, subtitle }: IBlogLinkProps) => {
+  ({ children, title, subtitle }: IBlogLinkProps, _ref) => {
     return (
       <article>
         {title ? (

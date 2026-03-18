@@ -18,6 +18,12 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "baseUrl": ".",
+    "types": [
+      "jest",
+      "node",
+      "@testing-library/jest-dom"
+    ],
     "paths": {
       // "test-utils": ["./tests/test-utils.tsx"]
       "test-utils": [
@@ -31,6 +37,7 @@
     "**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "cypress"
   ]
 }
