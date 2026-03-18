@@ -6,6 +6,7 @@ const imageProps: any = {};
 pageImages.forEach((image) => {
   imageProps[image.name] = {
     src: image.src,
+    alt: image.alt,
     width: 3024,
     height: 1816,
     type: 'png',

@@ -1,6 +1,8 @@
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 import InvisiCard from '../components/InvisiCard';
@@ -131,15 +133,22 @@ export const getStaticProps: GetStaticProps = async () => {
   const imageProps: Partial<Record<HomePageImageName, any>> = {};
   const enrichedImageObjs = await Promise.all(
     pageImages.map(async (imageObj) => {
-      return await getPlaiceholder(imageObj.src).then(({ base64, img }) => {
-        return { ...imageObj, img, base64 };
+      const buffer = await fs.readFile(
+        path.join(process.cwd(), 'public', imageObj.src)
+      );
+
+      return await getPlaiceholder(buffer).then(({ base64, metadata }) => {
+        return { ...imageObj, metadata, base64 };
       });
     })
   );
 
   enrichedImageObjs.forEach((enrichedImageObj) => {
     imageProps[enrichedImageObj.name] = {
-      ...enrichedImageObj.img,
+      src: enrichedImageObj.src,
+      width: enrichedImageObj.metadata.width,
+      height: enrichedImageObj.metadata.height,
+      alt: enrichedImageObj.alt,
       blurDataURL: enrichedImageObj.base64,
     };
   });
