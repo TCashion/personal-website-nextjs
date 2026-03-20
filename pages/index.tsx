@@ -52,10 +52,18 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
             data-testid="home-headshot-image"
             className="opacity-75"
           />
-          <div className="hidden lg:flex items-center justify-center m-auto">
-            <h1 className="mx-5 text-secondary italic opacity-75 text-6xl">
-              Welcome
-            </h1>
+          <div className="hidden lg:flex flex-col items-start m-auto">
+            <div className="flex flex-col w-9/12 gap-y-4 text-secondary text-xl">
+              <h1 className="text-secondary opacity-75 text-4xl">
+                My name is Travis Cashion.
+              </h1>
+              <p>I build software and study how systems shape the world.</p>
+              <p>
+                I am a full-stack software engineer interested in the
+                intersection of technology, environmental stewardship &
+                conservation.
+              </p>
+            </div>
           </div>
         </div>
         <div className="flex items-center">
@@ -134,13 +142,13 @@ export const getStaticProps: GetStaticProps = async () => {
   const enrichedImageObjs = await Promise.all(
     pageImages.map(async (imageObj) => {
       const buffer = await fs.readFile(
-        path.join(process.cwd(), 'public', imageObj.src)
+        path.join(process.cwd(), 'public', imageObj.src),
       );
 
       return await getPlaiceholder(buffer).then(({ base64, metadata }) => {
         return { ...imageObj, metadata, base64 };
       });
-    })
+    }),
   );
 
   enrichedImageObjs.forEach((enrichedImageObj) => {
