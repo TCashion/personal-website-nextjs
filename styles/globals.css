@@ -37,18 +37,6 @@ a {
   margin: 0 auto;
 }
 
-/* for horizontally-oriented images */
-.round-img-horiz {
-  height: 100%;
-  width: auto;
-  margin: 0 auto;
-  margin-left: -25%;
-}
-
-.about-img {
-  margin-top: -15% !important;
-}
-
 /* image classes for blog posts to fit with prose */
 /* for images that take up entire width of container in between prose, i.e. not inline. */
 .block-img {
@@ -86,11 +74,8 @@ a {
 .prose,
 .prose-container,
 .page-title,
-.blog-go-back-container,
 .prose-heading,
-.divider,
-.project-container,
-.about-container {
+.divider {
   margin: 0 auto;
   max-width: 650px;
 }

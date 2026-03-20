@@ -175,8 +175,7 @@
 }
 
 .postContent :global(.page-title),
-.postContent :global(.prose-container),
-.postContent :global(.blog-go-back-container) {
+.postContent :global(.prose-container) {
   margin-left: auto;
   margin-right: auto;
 }
