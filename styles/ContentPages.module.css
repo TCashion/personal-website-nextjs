@@ -1,0 +1,238 @@
+.page {
+  --page-bg: #0f1724;
+  --page-panel: #162131;
+  --page-panel-soft: #1b2837;
+  --page-border: rgba(197, 211, 227, 0.14);
+  --page-border-strong: rgba(197, 211, 227, 0.22);
+  --page-text: #edf2f7;
+  --page-muted: rgba(237, 242, 247, 0.72);
+  --page-accent: #c9d4c1;
+  --page-shadow: 0 24px 60px rgba(5, 10, 18, 0.24);
+  color: var(--page-text);
+  width: min(1120px, calc(100vw - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 5rem;
+}
+
+.pageHeader {
+  max-width: 42rem;
+  margin: 0 auto 2.75rem;
+  padding: 1.75rem 0 0;
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--page-accent);
+}
+
+.pageTitle {
+  margin: 0.75rem 0 0;
+  font-size: clamp(2.35rem, 5vw, 3.75rem);
+  line-height: 1.05;
+}
+
+.pageIntro {
+  margin: 1rem 0 0;
+  color: var(--page-muted);
+  font-size: clamp(1rem, 1vw + 0.85rem, 1.15rem);
+  line-height: 1.75;
+}
+
+.projectList,
+.postList {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.projectLink,
+.postLink {
+  display: block;
+}
+
+.projectCard,
+.postCard,
+.aboutShell {
+  border: 1px solid var(--page-border);
+  border-radius: 28px;
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.03),
+      transparent 60%
+    ),
+    var(--page-panel);
+  box-shadow: var(--page-shadow);
+}
+
+.projectCard {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.projectLink:hover .projectCard,
+.projectLink:focus-visible .projectCard,
+.postLink:hover .postCard,
+.postLink:focus-visible .postCard {
+  transform: translateY(-2px);
+  border-color: rgba(201, 212, 193, 0.34);
+}
+
+.projectImageWrap {
+  min-height: 100%;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.projectImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+}
+
+.projectBody,
+.postBody,
+.aboutContent {
+  padding: 1.5rem;
+}
+
+.projectMeta,
+.postMeta {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.84rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--page-accent);
+}
+
+.projectHeading,
+.postHeading {
+  margin: 0.45rem 0 0;
+  font-size: clamp(1.55rem, 1.3vw + 1.2rem, 2rem);
+  line-height: 1.18;
+}
+
+.projectDescription,
+.postDescription,
+.aboutContent p,
+.aboutContent li {
+  color: var(--page-muted);
+  line-height: 1.7;
+}
+
+.projectDescription {
+  margin: 1rem 0 0;
+}
+
+.projectSubDescription {
+  margin: 1rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.projectSubDescription li + li {
+  margin-top: 0.55rem;
+}
+
+.postCard {
+  padding: 1.25rem 1.5rem;
+}
+
+.postCardInner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.postMeta {
+  flex-shrink: 0;
+}
+
+.aboutShell {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.aboutMedia {
+  display: flex;
+  justify-content: center;
+}
+
+.aboutImageFrame {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--page-border-strong);
+  background: rgba(255, 255, 255, 0.03);
+  height: fit-content;
+  margin: auto;
+}
+
+.aboutImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.aboutContent h2 {
+  margin: 0 0 1rem;
+}
+
+.aboutContent p + p {
+  margin-top: 1rem;
+}
+
+.aboutList {
+  margin: 1rem 0 0;
+  padding-left: 1.1rem;
+  list-style-type: disc;
+}
+
+.aboutList li + li {
+  margin-top: 0.35rem;
+}
+
+@media (max-width: 900px) {
+  .projectCard,
+  .aboutShell {
+    grid-template-columns: 1fr;
+  }
+
+  .projectImage {
+    min-height: 200px;
+  }
+
+  .postCardInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    width: min(100vw - 1.5rem, 1120px);
+    padding-bottom: 4rem;
+  }
+
+  .pageHeader {
+    margin-bottom: 2rem;
+  }
+
+  .projectBody,
+  .postCard,
+  .aboutContent {
+    padding: 1.2rem;
+  }
+}

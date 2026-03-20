@@ -41,7 +41,7 @@ describe('HomePage', () => {
     expect(
       screen.getByRole('heading', {
         level: 2,
-        name: /if any of this resonates, feel free to reach out\./i,
+        name: /thank you for visiting\./i,
       })
     ).toBeTruthy();
 
