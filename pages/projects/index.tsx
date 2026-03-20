@@ -15,7 +15,7 @@ const ProjectsHome = ({ projects }: IProps) => {
     <Layout>
       <div className="flex flex-col flex-wrap content-center px-2">
         <h2 className="text-center text-xl md:text-2xl lg:text-3xl m-10">
-          Portfolio
+          Projects
         </h2>
         {projects.map((project) => (
           <Link

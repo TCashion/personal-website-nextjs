@@ -7,9 +7,9 @@ describe('routing', () => {
 
   describe('the main nav bar', () => {
     it('routes appropriately', () => {
-      cy.get('[data-test-id="main-nav-portfolio"]', { timeout: 15000 }).click();
+      cy.get('[data-test-id="main-nav-projects"]', { timeout: 15000 }).click();
       cy.url().should('include', '/projects');
-      cy.contains('h2', 'Portfolio').should('be.visible');
+      cy.contains('h2', 'Projects').should('be.visible');
 
       cy.get('[data-test-id="main-nav-blog"]').click();
       cy.url().should('include', '/posts');
@@ -22,7 +22,7 @@ describe('routing', () => {
       cy.get('[data-test-id="main-nav-home"]').click();
       cy.url().should('equal', Cypress.env('localServerURL'));
       cy.get('[data-testid="home-container"]').should('exist');
-      cy.contains('h2', 'Portfolio').should('exist');
+      cy.contains('h2', 'Projects').should('exist');
     });
   });
 
@@ -33,9 +33,9 @@ describe('routing', () => {
 
     it('routes appropriately', () => {
       cy.get('[data-test-id="hamburger-menu"]').click();
-      cy.get('[data-test-id="side-nav-portfolio"]').click();
+      cy.get('[data-test-id="side-nav-projects"]').click();
       cy.url().should('include', '/projects');
-      cy.contains('h2', 'Portfolio').should('be.visible');
+      cy.contains('h2', 'Projects').should('be.visible');
 
       cy.get('[data-test-id="hamburger-menu"]').click();
       cy.get('[data-test-id="side-nav-blog"]').click();
@@ -51,15 +51,15 @@ describe('routing', () => {
       cy.get('[data-test-id="side-nav-home"]').click();
       cy.url().should('equal', Cypress.env('localServerURL'));
       cy.get('[data-testid="home-container"]').should('exist');
-      cy.contains('h2', 'Portfolio').should('exist');
+      cy.contains('h2', 'Projects').should('exist');
     });
   });
 
   describe('content routes', () => {
-    it('opens the first project detail page and returns to the portfolio index', () => {
+    it('opens the first project detail page and returns to the projects index', () => {
       cy.visit(`${Cypress.env('localServerURL')}projects`);
 
-      cy.contains('h2', 'Portfolio').should('be.visible');
+      cy.contains('h2', 'Projects').should('be.visible');
       cy.get('a[href^="/projects/"]').first().as('firstProjectLink');
       cy.get('@firstProjectLink').invoke('attr', 'href').should('match', /^\/projects\/.+/);
       cy.get('@firstProjectLink').click();

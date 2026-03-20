@@ -6,7 +6,7 @@ import { INavLink } from '../types/types';
 
 const links: INavLink[] = [
   { label: 'Home', href: '/' },
-  { label: 'Portfolio', href: '/projects' },
+  { label: 'Projects', href: '/projects' },
   { label: 'Blog', href: '/posts' },
   { label: 'About', href: '/about' },
 ];

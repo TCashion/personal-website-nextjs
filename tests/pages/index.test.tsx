@@ -20,27 +20,29 @@ describe('HomePage', () => {
   it('renders the hero, content sections, and site navigation', () => {
     render(<HomePage imageProps={imageProps} />);
 
-    expect(screen.getByRole('heading', { level: 1, name: /welcome/i })).toBeTruthy();
-    expect(screen.getByRole('heading', { level: 2, name: 'Portfolio' })).toBeTruthy();
+    expect(
+      screen.getByRole('heading', { level: 1, name: /my name is travis cashion\./i })
+    ).toBeTruthy();
+    expect(screen.getByRole('heading', { level: 2, name: 'Projects' })).toBeTruthy();
     expect(screen.getByRole('heading', { level: 2, name: 'Blog' })).toBeTruthy();
     expect(
       screen.getByRole('heading', { level: 2, name: /thank you for visiting/i })
     ).toBeTruthy();
 
     const nav = screen.getByTestId('header-nav');
-    ['Home', 'Portfolio', 'Blog', 'About'].forEach((label) => {
+    ['Home', 'Projects', 'Blog', 'About'].forEach((label) => {
       expect(within(nav).getByRole('link', { name: label })).toBeTruthy();
     });
   });
 
-  it('provides stable portfolio and blog calls to action', () => {
+  it('provides stable projects and blog calls to action', () => {
     render(<HomePage imageProps={imageProps} />);
 
-    const portfolioLink = screen.getByRole('button', { name: 'Portfolio' }).closest('a');
+    const projectsLink = screen.getByRole('button', { name: 'Projects' }).closest('a');
     const blogLink = screen.getByRole('button', { name: 'Blog' }).closest('a');
 
-    expect(portfolioLink).not.toBeNull();
-    expect(portfolioLink?.getAttribute('href')).toBe('/projects');
+    expect(projectsLink).not.toBeNull();
+    expect(projectsLink?.getAttribute('href')).toBe('/projects');
     expect(blogLink).not.toBeNull();
     expect(blogLink?.getAttribute('href')).toBe('/posts');
   });

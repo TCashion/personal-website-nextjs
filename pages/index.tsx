@@ -76,14 +76,14 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <div className="w-full sm:w-1/2 p-8 flex flex-col absolute">
             <div className="my-auto">
               <InvisiCard>
-                <h2>Portfolio</h2>
+                <h2>Projects</h2>
                 <p>
-                  I love solving problems with code. Check out my portfolio to
+                  I love solving problems with code. Check out my projects to
                   see my projects.
                 </p>
                 <Link href="/projects">
                   <span>
-                    <Button innerText="Portfolio" type="button" />
+                    <Button innerText="Projects" type="button" />
                   </span>
                 </Link>
               </InvisiCard>
