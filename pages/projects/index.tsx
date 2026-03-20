@@ -20,36 +20,38 @@ const ProjectsHome = ({ projects }: IProps) => {
         </header>
         <div className={styles.projectList}>
           {projects.map((project) => (
-          <Link
-            className={styles.projectLink}
-            key={`${project.title}-link`}
-            href={'/projects/[slug]'}
-            as={`/projects/${project.slug}`}
-            passHref
-          >
-            <article className={styles.projectCard}>
-              <div className={styles.projectImageWrap}>
-                <img
-                  className={styles.projectImage}
-                  src={project.previewImgSrc}
-                  alt={`${project.title} preview`}
-                />
-              </div>
-              <div className={styles.projectBody}>
-                <p className={styles.projectMeta}>{formatDate(project)}</p>
-                <h3 className={styles.projectHeading}>{project.title}</h3>
-                <p className={styles.projectDescription}>{project.description}</p>
-              {project.subDescription ? (
-                  <ul className={styles.projectSubDescription}>
-                  {project.subDescription.map((bullet) => (
-                    <li key={bullet.substring(0, 20)}>{bullet}</li>
-                  ))}
-                </ul>
-              ) : null}
-              </div>
-            </article>
-          </Link>
-        ))}
+            <Link
+              className={styles.projectLink}
+              key={`${project.title}-link`}
+              href={'/projects/[slug]'}
+              as={`/projects/${project.slug}`}
+              passHref
+            >
+              <article className={styles.projectCard}>
+                <div className={styles.projectImageWrap}>
+                  <img
+                    className={styles.projectImage}
+                    src={project.previewImgSrc}
+                    alt={`${project.title} preview`}
+                  />
+                </div>
+                <div className={styles.projectBody}>
+                  <p className={styles.projectMeta}>{formatDate(project)}</p>
+                  <h3 className={styles.projectHeading}>{project.title}</h3>
+                  <p className={styles.projectDescription}>
+                    {project.description}
+                  </p>
+                  {project.subDescription ? (
+                    <ul className={styles.projectSubDescription}>
+                      {project.subDescription.map((bullet) => (
+                        <li key={bullet.substring(0, 20)}>{bullet}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
+              </article>
+            </Link>
+          ))}
         </div>
       </div>
     </Layout>

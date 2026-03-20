@@ -19,25 +19,25 @@ const PostsHome = ({ posts }: IProps) => {
           <h2 className={styles.pageTitle}>Blog</h2>
         </header>
         <ul className={styles.postList}>
-            {posts.map((post) => (
+          {posts.map((post) => (
             <li key={post.title}>
-                <Link
-                  className={styles.postLink}
-                  key={`${post.title}-link`}
-                  href={'/posts/[slug]'}
-                  as={`/posts/${post.slug}`}
-                  passHref
-                >
-                  <article className={styles.postCard}>
-                    <div className={styles.postCardInner}>
-                      <h3 className={styles.postHeading}>{post.title}</h3>
-                      <p className={styles.postMeta}>{formatDate(post)}</p>
-                    </div>
-                  </article>
-                </Link>
-              </li>
-            ))}
-          </ul>
+              <Link
+                className={styles.postLink}
+                key={`${post.title}-link`}
+                href={'/posts/[slug]'}
+                as={`/posts/${post.slug}`}
+                passHref
+              >
+                <article className={styles.postCard}>
+                  <div className={styles.postCardInner}>
+                    <h3 className={styles.postHeading}>{post.title}</h3>
+                    <p className={styles.postMeta}>{formatDate(post)}</p>
+                  </div>
+                </article>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </Layout>
   );

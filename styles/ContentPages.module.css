@@ -14,10 +14,17 @@
   padding: 2rem 0 5rem;
 }
 
-.pageHeader {
-  max-width: 42rem;
-  margin: 0 auto 2.75rem;
+.pageHeader,
+.projectList, 
+.postList {
+  max-width: 55rem;
+  margin: 0 auto 2rem;
   padding: 1.75rem 0 0;
+}
+
+.projectList, 
+.postList {
+  margin: 0 auto;
 }
 
 .eyebrow {
