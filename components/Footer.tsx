@@ -2,6 +2,7 @@ import Image from 'next/image';
 import linkedInImg from '../public/images/social/linkedin.png';
 import facebookImg from '../public/images/social/facebook.png';
 import instagramImg from '../public/images/social/instagram.png';
+import styles from '../styles/Chrome.module.css';
 const socialLinks = [
   {
     href: 'https://www.linkedin.com/in/traviscashion/',
@@ -25,24 +26,19 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer
-      className="overflow-hidden flex flex-row px-4 py-8 relative w-full bottom-0"
-      data-testid="footer"
-    >
-      <div className="w-1/3 hidden sm:block text-center my-auto">
-        <h3>Travis G. Cashion</h3>
-      </div>
-      <div className="w-1/3 hidden sm:flex flex-col text-center">
-        <p>Designed & built by Travis Cashion</p>
-      </div>
-      <div className="w-full sm:w-1/3 flex text-center">
+    <footer className={styles.footer} data-testid="footer">
+      <div className={styles.footerInner}>
+        <div>
+          <h3 className={styles.footerName}>Travis G. Cashion</h3>
+        </div>
+        <div />
         <div
-          className="flex flex-row m-auto"
+          className={styles.socialLinks}
           data-testid="social-links-container"
         >
           {socialLinks.map((link, idx) => (
             <a
-              className="mx-2 my-auto h-8"
+              className={styles.socialLink}
               href={link.href}
               key={link.href + idx}
               target="_blank"
@@ -51,8 +47,8 @@ const Footer = () => {
               <Image
                 src={link.imageFile}
                 alt={link.imgAlt}
-                height={50}
-                width={50}
+                height={28}
+                width={28}
               />
             </a>
           ))}

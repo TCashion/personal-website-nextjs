@@ -92,7 +92,6 @@ describe('HomePage', () => {
 
     const footer = screen.getByTestId('footer');
 
-    expect(within(footer).getByText(/designed & built by travis cashion/i)).toBeTruthy();
     expect(within(footer).getByText(/travis g\. cashion/i)).toBeTruthy();
 
     const socialLinks = [
