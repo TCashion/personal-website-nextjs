@@ -18,35 +18,63 @@ const imageProps = Object.fromEntries(
 
 describe('HomePage', () => {
   it('renders the hero, content sections, and site navigation', () => {
-    render(<HomePage imageProps={imageProps} />);
+    render(
+      <HomePage
+        imageProps={imageProps}
+        featuredProjects={[]}
+        featuredPosts={[]}
+      />
+    );
 
-    expect(screen.getByRole('heading', { level: 1, name: /welcome/i })).toBeTruthy();
-    expect(screen.getByRole('heading', { level: 2, name: 'Portfolio' })).toBeTruthy();
-    expect(screen.getByRole('heading', { level: 2, name: 'Blog' })).toBeTruthy();
     expect(
-      screen.getByRole('heading', { level: 2, name: /thank you for visiting/i })
+      screen.getByRole('heading', {
+        level: 1,
+        name: /i build software and study how systems shape the world\./i,
+      })
+    ).toBeTruthy();
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'Projects' })
+    ).toBeTruthy();
+    expect(
+      screen.getByRole('heading', { level: 2, name: /writing/i })
+    ).toBeTruthy();
+    expect(
+      screen.getByRole('heading', {
+        level: 2,
+        name: /thank you for visiting\./i,
+      })
     ).toBeTruthy();
 
     const nav = screen.getByTestId('header-nav');
-    ['Home', 'Portfolio', 'Blog', 'About'].forEach((label) => {
+    ['Home', 'Projects', 'Blog', 'About'].forEach((label) => {
       expect(within(nav).getByRole('link', { name: label })).toBeTruthy();
     });
   });
 
-  it('provides stable portfolio and blog calls to action', () => {
-    render(<HomePage imageProps={imageProps} />);
+  it('provides stable projects and blog calls to action', () => {
+    render(
+      <HomePage
+        imageProps={imageProps}
+        featuredProjects={[]}
+        featuredPosts={[]}
+      />
+    );
 
-    const portfolioLink = screen.getByRole('button', { name: 'Portfolio' }).closest('a');
-    const blogLink = screen.getByRole('button', { name: 'Blog' }).closest('a');
+    const projectsLink = screen.getByRole('link', { name: 'View my work' });
+    const blogLink = screen.getByRole('link', { name: 'Read my writing' });
 
-    expect(portfolioLink).not.toBeNull();
-    expect(portfolioLink?.getAttribute('href')).toBe('/projects');
-    expect(blogLink).not.toBeNull();
-    expect(blogLink?.getAttribute('href')).toBe('/posts');
+    expect(projectsLink.getAttribute('href')).toBe('/projects');
+    expect(blogLink.getAttribute('href')).toBe('/posts');
   });
 
   it('renders all homepage images with meaningful alt text', () => {
-    render(<HomePage imageProps={imageProps} />);
+    render(
+      <HomePage
+        imageProps={imageProps}
+        featuredProjects={[]}
+        featuredPosts={[]}
+      />
+    );
 
     pageImages.forEach((image) => {
       expect(screen.getByAltText(image.alt)).toBeTruthy();
@@ -54,11 +82,16 @@ describe('HomePage', () => {
   });
 
   it('renders footer attribution and social links', () => {
-    render(<HomePage imageProps={imageProps} />);
+    render(
+      <HomePage
+        imageProps={imageProps}
+        featuredProjects={[]}
+        featuredPosts={[]}
+      />
+    );
 
     const footer = screen.getByTestId('footer');
 
-    expect(within(footer).getByText(/designed & built by travis cashion/i)).toBeTruthy();
     expect(within(footer).getByText(/travis g\. cashion/i)).toBeTruthy();
 
     const socialLinks = [

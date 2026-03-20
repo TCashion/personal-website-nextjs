@@ -10,7 +10,7 @@ describe('ProjectsHome', () => {
 
     render(<ProjectsHome projects={sortedProjects} />);
 
-    expect(screen.getByRole('heading', { level: 2, name: 'Portfolio' })).toBeTruthy();
+    expect(screen.getByRole('heading', { level: 2, name: 'Projects' })).toBeTruthy();
 
     sortedProjects.forEach((project) => {
       const link = screen.getByText(project.title).closest('a');

@@ -1,4 +1,4 @@
-import { MouseEventHandler, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 export interface INavLink {
   label: string;
@@ -16,17 +16,6 @@ export interface IChildrenProps {
   title?: string;
   subtitle?: string;
   imageUrl?: string;
-}
-
-export interface ICardWithImageProps extends IChildrenProps {
-  onClick?: MouseEventHandler<HTMLAnchorElement>;
-  href?: string;
-}
-
-
-export interface IBlogLinkProps extends IChildrenProps {
-  onClick?: MouseEventHandler<HTMLAnchorElement>;
-  href?: string;
 }
 
 export interface ICollaborator {
@@ -48,22 +37,8 @@ export interface IProject {
   previewImgSrc: string;
 }
 
-export interface IAddProjectParams {
-  project: IProject;
-}
-
 export interface ISlugs {
   slug: string;
-}
-
-export interface IAddPostParams {
-  post: {
-    slug: string;
-    title: string;
-    date: string;
-    content: string;
-    previewImgSrc: string;
-  };
 }
 
 export interface IPost {

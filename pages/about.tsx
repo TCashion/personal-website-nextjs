@@ -4,52 +4,52 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import Layout from '../components/Layout';
 import { getPlaiceholder } from 'plaiceholder';
+import styles from '../styles/ContentPages.module.css';
 
 const About: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   imageProps,
 }) => {
   return (
     <Layout>
-      <div className="container flex flex-col sm:flex-row">
-        <div className="flex items-center">
-          <div className="image-cropper rounded-none sm:rounded-full">
-            <Image
-              {...imageProps}
-              alt="Picture of Travis Cashion"
-              className="about-img"
-              placeholder="blur"
-            />
+      <div className={styles.page}>
+        <header className={styles.pageHeader}>
+          <p className={styles.eyebrow}>Profile</p>
+          <h2 className={styles.pageTitle}>About Me</h2>
+        </header>
+        <div className={styles.aboutShell}>
+          <div className={styles.aboutMedia}>
+            <div className={styles.aboutImageFrame}>
+              <Image
+                {...imageProps}
+                alt="Picture of Travis Cashion"
+                className={styles.aboutImage}
+                placeholder="blur"
+              />
+            </div>
           </div>
-        </div>
-        <div className="mx-5 about-container">
-          <h2 className="my-2">About Me</h2>
-          <div className="divider"></div>
-          <p className="my-2">
-            My name is Travis Cashion. I was born and raised in the beautiful
-            state of Colorado. I am a father, a family man, a software engineer,
-            a writer, and a student of life. I love to investigate and discover;
-            solve puzzles; learn new skills; and spend time in nature.
-          </p>
-          <p>
-            <br />
-          </p>
-          <p>Thanks for visiting my web page! Talk to me about:</p>
-          <p>
-            <br />
-          </p>
-          <ul className="list-disc list-inside">
-            <li>Web development</li>
-            <li>Programming</li>
-            <li>Writing</li>
-            <li>Business</li>
-            <li>Hunting, fishing, wildlife, nature & the outdoors</li>
-            <li>Cooking</li>
-            <li>Brazilian Jiu-Jitsu</li>
-            <li>Travelling</li>
-            <li>Dogs</li>
-            <li>Spanish</li>
-            <li>Or anything else!</li>
-          </ul>
+          <div className={styles.aboutContent}>
+            <p>
+              My name is Travis Cashion. I was born and raised in the beautiful
+              state of Colorado. I am a father, a family man, a software
+              engineer, a writer, and a student of life. I love to investigate
+              and discover; solve puzzles; learn new skills; and spend time in
+              nature.
+            </p>
+            <p>Thanks for visiting my web page! Talk to me about:</p>
+            <ul className={styles.aboutList}>
+              <li>Web development</li>
+              <li>Programming</li>
+              <li>Writing</li>
+              <li>Parenting</li>
+              <li>Hunting, fishing, wildlife, nature & the outdoors</li>
+              <li>Cooking</li>
+              <li>Brazilian Jiu-Jitsu</li>
+              <li>Travelling</li>
+              <li>Dogs</li>
+              <li>Spanish</li>
+              <li>Or anything else!</li>
+            </ul>
+          </div>
         </div>
       </div>
     </Layout>

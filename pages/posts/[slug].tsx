@@ -1,29 +1,27 @@
 import Link from 'next/link';
 import { IPost } from '../../types/types';
 import Layout from '../../components/Layout';
-import Button from '../../components/Button';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import * as PostComponents from '../../lib/posts/components';
 import { getAllPostSlugs, getOnePostData } from '../../lib/posts/postsService';
+import styles from '../../styles/DetailPages.module.css';
 interface IProps {
   post: IPost;
 }
 
 const Post = ({ post }: IProps) => {
-  const postComponent = `<${post.componentName} />`;
-
   return (
     <Layout>
-      <div className="container p-8">
-        <div className="flex flex-col sm:flex-row">
-          <div className="w-full">
-            <div className="blog-go-back-container">
-              <Link href="/posts">
-                <span className="my-4">
-                  <Button innerText="<< Go Back" type="button" />
-                </span>
-              </Link>
-            </div>
+      <div className={styles.page}>
+        <div className={styles.backNavBlogPost}>
+          <Link className={styles.backLink} href="/posts">
+            <button className={styles.backButton} type="button">
+              {'<< Go Back'}
+            </button>
+          </Link>
+        </div>
+        <article >
+          <div className={styles.postContent}>
             {post.componentName === 'LetterToMyPreBootcampSelf' && (
               <PostComponents.LetterToMyPreBootcampSelf />
             )}
@@ -51,7 +49,7 @@ const Post = ({ post }: IProps) => {
               <PostComponents.LearningGolang />
             )}
           </div>
-        </div>
+        </article>
       </div>
     </Layout>
   );

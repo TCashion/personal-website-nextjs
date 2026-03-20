@@ -4,7 +4,7 @@ import { IPost } from '../../types/types';
 import { GetStaticProps } from 'next';
 import { formatDate, byNewestFirst } from '../../lib/helpers';
 import { postsData } from '../../lib/posts/postsService';
-import BlogLink from '../../components/BlogLink';
+import styles from '../../styles/ContentPages.module.css';
 
 interface IProps {
   posts: IPost[];
@@ -13,27 +13,31 @@ interface IProps {
 const PostsHome = ({ posts }: IProps) => {
   return (
     <Layout>
-      <div className="flex flex-wrap justify-center">
-        <div className="px-2 w-full max-w-850">
-          <h2 className="text-center text-xl md:text-2xl lg:text-3xl m-10" >Blog</h2>
-          <ul>
-            {posts.map((post) => (
-              <li className="m-4" key={post.title}>
-                <Link
-                  key={`${post.title}-link`}
-                  href={'/posts/[slug]'}
-                  as={`/posts/${post.slug}`}
-                  passHref
-                >
-                  <BlogLink
-                    title={post.title}
-                    subtitle={formatDate(post)}
-                  ></BlogLink>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className={styles.page}>
+        <header className={styles.pageHeader}>
+          <p className={styles.eyebrow}>Writing</p>
+          <h2 className={styles.pageTitle}>Blog</h2>
+        </header>
+        <ul className={styles.postList}>
+          {posts.map((post) => (
+            <li key={post.title}>
+              <Link
+                className={styles.postLink}
+                key={`${post.title}-link`}
+                href={'/posts/[slug]'}
+                as={`/posts/${post.slug}`}
+                passHref
+              >
+                <article className={styles.postCard}>
+                  <div className={styles.postCardInner}>
+                    <h3 className={styles.postHeading}>{post.title}</h3>
+                    <p className={styles.postMeta}>{formatDate(post)}</p>
+                  </div>
+                </article>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </Layout>
   );
