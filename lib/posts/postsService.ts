@@ -4,7 +4,7 @@ import { byNewestFirst } from '../helpers';
 export const postsData: IPost[] = [
   {
     slug: 'a-letter-to-my-pre-bootcamp-self',
-    timeStamp: 1601009408032,
+    date: '09/2020',
     title: 'A letter to my pre-bootcamp self',
     tags: ['Career', 'Learning', 'Reflection', 'Programming'],
     previewImgSrc: '/images/blog/a-letter.png',
@@ -14,7 +14,7 @@ export const postsData: IPost[] = [
   },
   {
     slug: 'hunting-with-my-father',
-    timeStamp: 1596009408032,
+    date: '07/2019',
     title: 'Hunting With My Father',
     tags: ['Family', 'Hunting', 'Outdoors'],
     previewImgSrc: '/images/blog/hunting-w-my-father.jpg',
@@ -24,7 +24,7 @@ export const postsData: IPost[] = [
   },
   {
     slug: 'just-the-right-thing',
-    timeStamp: 1563009408032,
+    date: '07/2019',
     title: 'Just the Right Thing',
     tags: ['Mindset', 'Reflection', 'Work'],
     previewImgSrc:
@@ -35,7 +35,7 @@ export const postsData: IPost[] = [
   },
   {
     slug: 'maf',
-    timeStamp: 1554009408032,
+    date: '03/2019',
     title: 'M.A.F.',
     tags: ['Health', 'Learning', 'Running'],
     previewImgSrc: '/images/blog/MAF/MAFTestInitial.jpg',
@@ -45,7 +45,7 @@ export const postsData: IPost[] = [
   },
   {
     slug: 'one-really-well-written-paragraph',
-    timeStamp: 1563009408032,
+    date: '07/2019',
     title: 'One Really Well-Written Paragraph',
     tags: ['Learning', 'Reflection', 'Writing'],
     previewImgSrc: '/images/blog/one-paragraph.jpg',
@@ -55,7 +55,7 @@ export const postsData: IPost[] = [
   },
   {
     slug: 'ritual',
-    timeStamp: 1580438545989,
+    date: '01/2020',
     title: 'Ritual',
     tags: ['Outdoors', 'Hunting'],
     previewImgSrc: '/images/blog/ritual/ritual-2.jpg',
@@ -65,7 +65,7 @@ export const postsData: IPost[] = [
   },
   {
     slug: 'most-important-question',
-    timeStamp: 1593438545989,
+    date: '06/2019',
     title: 'The Most Important Question',
     tags: ['Mindset', 'Reflection'],
     previewImgSrc: '/images/blog/MIQ.jpg',
@@ -74,7 +74,7 @@ export const postsData: IPost[] = [
   },
   {
     slug: 'where-is-the-fear',
-    timeStamp: 1563009408032,
+    date: '07/2019',
     title: 'Where is the Fear?',
     tags: ['Creativity', 'Mindset', 'Writing'],
     previewImgSrc: '/images/blog/where-is-the-fear.jpg',
@@ -84,7 +84,7 @@ export const postsData: IPost[] = [
   },
   {
     slug: 'worn-out-boots',
-    timeStamp: 1569009408032,
+    date: '09/2019',
     title: 'Worn Out Boots',
     tags: ['Hunting', 'Outdoors', 'Reflection'],
     previewImgSrc: '/images/blog/newboots.jpg',
@@ -94,7 +94,7 @@ export const postsData: IPost[] = [
   },
   {
     slug: 'go-lang',
-    timeStamp: 1667486292000,
+    date: '11/2022',
     title: 'What I Learned from Learning GoLang',
     tags: ['Career', 'Learning', 'Programming'],
     componentName: 'LearningGolang',

@@ -16,7 +16,7 @@ export const projects: IProject[] = [
   {
     slug: 'day-tracker',
     title: 'Day Tracker',
-    timeStamp: 1580285311842, // January
+    date: '01/2020',
     description:
       'Day Tracker is a free time-logging tool that tracks and displays how the user spends his or her time throughout a given day. This web-based app was my showcase project for my FEWD course taken through General Assembly.',
     tech: [
@@ -35,7 +35,7 @@ export const projects: IProject[] = [
   {
     slug: 'battleship',
     title: 'Battleship',
-    timeStamp: 1590810545989, // May
+    date: '05/2020',
     description:
       "This version of Battleship is based on the popular children's board game. Play against the computer to locate and sink its ships, before it sinks all of yours!",
     tech: ['HTML', 'CSS', 'JavaScript'],
@@ -46,7 +46,7 @@ export const projects: IProject[] = [
   {
     slug: 'outdoor-journal',
     title: 'Outdoor Journal',
-    timeStamp: 1590810545989, // May
+    date: '05/2020',
     description:
       'The Outdoor Journal is a MEN stack app that helps you plan, record, and save memories of your favorite outdoor adventures. This project was born out of my own personal experience as an avid outdoorsman and journal keeper.',
     tech: [
@@ -65,7 +65,7 @@ export const projects: IProject[] = [
   {
     slug: 'finch-finder',
     title: 'Finch Finder',
-    timeStamp: 1593438545989, // June
+    date: '06/2020',
     description:
       "For years, I've been a casual birder. There are tons of great apps out there for looking up and tracking birds, but I wanted to make one that fit my specific needs. Enjoy!",
     tech: [
@@ -84,7 +84,7 @@ export const projects: IProject[] = [
   {
     slug: 'gas-app',
     title: 'GASapp',
-    timeStamp: 1593438545989, // June
+    date: '06/2020',
     description:
       'Music enthusiasts often suffer from something called GAS - "Gear Acquisition Syndrome." The GASapp is a place where you can store and evaluate all of your music gear in one easy to access list. The app includes valuations on each piece of gear you own, or a price listing on your wish-list items (thanks to the Reverb.com API).',
     collaborators: [collaborators[0], collaborators[1]],
@@ -105,7 +105,7 @@ export const projects: IProject[] = [
   {
     slug: 'obnoxious',
     title: 'obNoxious',
-    timeStamp: 1596066545989, // July
+    date: '07/2020',
     description:
       'Invasive species are an issue worldwide, but this app focuses on those species invading North America, specifically the United States. The obNoxious app servers two purposes:',
     subDescription: [
@@ -129,7 +129,7 @@ export const projects: IProject[] = [
   {
     slug: 'traviscashiondotcom',
     title: 'TravisCashion.com (v2.0)',
-    timeStamp: 1639754698396, // December 2021
+    date: '12/2021',
     description:
       'This is the second iteration of my personal portfolio site. This site runs on NextJS, which is a React-based framework that serves fast, highly performant React sites.',
     tech: [
@@ -146,7 +146,7 @@ export const projects: IProject[] = [
   {
     slug: 'stopanalyzing',
     title: 'Stop Analyzing Embed (open source)',
-    timeStamp: 1597471200000, // August
+    date: '08/2020',
     description:
       'Stop Analyzing Embed is a beginner-friendly, open source project created and maintained by Banco Do Brasil. Think of it like a Tinder app for products: the user compares two products presented on cards, and chooses the one that they like most. I contributed to this project in two ways. First, I re-wrote the documentation to correct typos and make the information more accessible to beginner developers. Then, I created a button component, complete with Jest units tests, that triggers and animation to slide the cards off of the screen (in the event that the user does not like either option presented).',
     tech: [
@@ -165,7 +165,7 @@ export const projects: IProject[] = [
   // {
   //   slug: 'vuex-webextensions',
   //   title: 'Vuex Webextensions (open source)',
-  //   timeStamp: 0,
+  //   date: 'MM/YYYY',
   //   description: '',
   //   tech: [],
   //   githubUrl: '',
@@ -174,7 +174,7 @@ export const projects: IProject[] = [
   // {
   //   slug: 'chromedriver',
   //   title: 'Selenium Chromedriver (open source)',
-  //   timeStamp: 0,
+  //   date: 'MM/YYYY',
   //   description: '',
   //   tech: [],
   //   githubUrl: '',
@@ -183,7 +183,7 @@ export const projects: IProject[] = [
   {
     slug: 'bex',
     title: 'Ibotta Browser Extension (Contributor)',
-    timeStamp: 1639754699396, // December 2021,
+    date: '12/2021',
     description:
       "Get cash back at your favorite stores with the help of Ibotta's browser extension.",
     tech: [
@@ -203,7 +203,7 @@ export const projects: IProject[] = [
   {
     slug: 'leftover-tag-scraper',
     title: 'Leftover Tag Scraper',
-    timeStamp: 1699538699396, // November 2023
+    date: '11/2023',
     description:
       "Scrape the Colorado Parks and Wildlife leftover tag list to find out what's available. Then, send an email to subscribers using Twilio's SendGrid platform.",
     tech: [
@@ -216,11 +216,10 @@ export const projects: IProject[] = [
     githubUrl: PRIVATE,
     previewImgSrc: '/images/portfolio/previews/leftover-tag-scraper.png',
   },
-  // monarch extension, timestamp July 1, 2024
   {
     slug: 'monarch',
     title: 'Caterpillar Browser Extension',
-    timeStamp: 1736222718396, // January 2025
+    date: '01/2025',
     description:
       'Caterpillar is a browser extension extension designed to extend the capabilities of the Monarch Financial website. Specifically, the extension scrapes your Amazon orders page in order to help users categorize Amazon purchases in Monarch. This project is available to the public on the Chrome web store.',
     tech: ['React', 'TypeScript', 'NextJs'],
