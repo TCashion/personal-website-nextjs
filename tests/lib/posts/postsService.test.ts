@@ -28,7 +28,6 @@ describe('postsService', () => {
       'Programming',
       'Reflection',
       'Running',
-      'Tradition',
       'Work',
       'Writing',
     ]);
@@ -38,6 +37,7 @@ describe('postsService', () => {
     expect(filterPostsByTag(postsData)).toHaveLength(postsData.length);
     expect(filterPostsByTag(postsData, 'Hunting').map(({ slug }) => slug)).toEqual([
       'hunting-with-my-father',
+      'ritual',
       'worn-out-boots',
     ]);
   });

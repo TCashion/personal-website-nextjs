@@ -6,7 +6,7 @@ export const postsData: IPost[] = [
     slug: 'a-letter-to-my-pre-bootcamp-self',
     timeStamp: 1601009408032,
     title: 'A letter to my pre-bootcamp self',
-    tags: ['Career', 'Learning', 'Reflection'],
+    tags: ['Career', 'Learning', 'Reflection', 'Programming'],
     previewImgSrc: '/images/blog/a-letter.png',
     preview:
       'Enrolling in a bootcamp takes some serious guts. Leaving behind a stable job and regular pay can be daunting. Even if your job is not stable or comfortable, going 12+ weeks without pay is extremely scary...',
@@ -57,7 +57,7 @@ export const postsData: IPost[] = [
     slug: 'ritual',
     timeStamp: 1580438545989,
     title: 'Ritual',
-    tags: ['Family', 'Outdoors', 'Tradition'],
+    tags: ['Outdoors', 'Hunting'],
     previewImgSrc: '/images/blog/ritual/ritual-2.jpg',
     preview:
       'The order of operations is always the same. We park our trucks at odd angles in the alleyway behind the garage. The radio plays classic rock. We crack open beers immediately upon arrival...',

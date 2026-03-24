@@ -58,18 +58,19 @@ describe('PostsHome', () => {
 
     render(<PostsHome posts={posts} tags={getSortedPostTags()} />);
 
-    fireEvent.click(screen.getByRole('button', { name: /Hunting \(2\)/i }));
+    fireEvent.click(screen.getByRole('button', { name: /Hunting \(3\)/i }));
 
     await waitFor(() => {
-      expect(screen.getByRole('button', { name: /Hunting \(2\)/i })).toHaveAttribute(
+      expect(screen.getByRole('button', { name: /Hunting \(3\)/i })).toHaveAttribute(
         'aria-pressed',
         'true'
       );
     });
 
     expect(screen.getByText('Hunting With My Father')).toBeInTheDocument();
+    expect(screen.getByText('Ritual')).toBeInTheDocument();
     expect(screen.getByText('Worn Out Boots')).toBeInTheDocument();
-    expect(screen.queryByText('Ritual')).not.toBeInTheDocument();
+    expect(screen.queryByText('Where is the Fear?')).not.toBeInTheDocument();
     expect(replace).toHaveBeenCalledWith(
       {
         pathname: '/posts',
