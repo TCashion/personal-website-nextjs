@@ -14,7 +14,7 @@ export const postsData: IPost[] = [
   },
   {
     slug: 'hunting-with-my-father',
-    date: '07/2020',
+    date: '07/2019',
     title: 'Hunting With My Father',
     tags: ['Family', 'Hunting', 'Outdoors'],
     previewImgSrc: '/images/blog/hunting-w-my-father.jpg',
@@ -65,7 +65,7 @@ export const postsData: IPost[] = [
   },
   {
     slug: 'most-important-question',
-    date: '06/2020',
+    date: '06/2019',
     title: 'The Most Important Question',
     tags: ['Mindset', 'Reflection'],
     previewImgSrc: '/images/blog/MIQ.jpg',
