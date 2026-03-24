@@ -27,6 +27,12 @@
   margin: 0 auto;
 }
 
+.postFilters,
+.emptyState {
+  max-width: 55rem;
+  margin: 0 auto 1.5rem;
+}
+
 .eyebrow {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -53,6 +59,20 @@
 .postList {
   display: grid;
   gap: 1.2rem;
+}
+
+.postFilters,
+.emptyState {
+  border: 1px solid var(--page-border);
+  border-radius: 28px;
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.03),
+      transparent 60%
+    ),
+    var(--page-panel-soft);
+  box-shadow: var(--page-shadow);
+  padding: 1.35rem 1.5rem;
 }
 
 .projectLink,
@@ -160,8 +180,106 @@
   gap: 1rem;
 }
 
+.postCardContent {
+  min-width: 0;
+}
+
 .postMeta {
   flex-shrink: 0;
+}
+
+.postTagList,
+.filterChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.postTagList {
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.postTag,
+.filterChip,
+.clearFiltersButton {
+  border-radius: 999px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.postTag {
+  padding: 0.4rem 0.8rem;
+  color: var(--page-text);
+  background: rgba(201, 212, 193, 0.14);
+  border: 1px solid rgba(201, 212, 193, 0.18);
+}
+
+.filterHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filterTitle,
+.emptyStateTitle {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.filterSummary,
+.emptyStateMessage {
+  margin: 0.45rem 0 0;
+  color: var(--page-muted);
+  line-height: 1.6;
+}
+
+.filterChip,
+.clearFiltersButton {
+  border: 1px solid var(--page-border-strong);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--page-text);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.filterChip {
+  padding: 0.55rem 0.95rem;
+}
+
+.filterChip:hover,
+.filterChip:focus-visible,
+.clearFiltersButton:hover,
+.clearFiltersButton:focus-visible {
+  border-color: rgba(201, 212, 193, 0.42);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+
+.filterChipActive {
+  border-color: rgba(201, 212, 193, 0.48);
+  background: rgba(201, 212, 193, 0.16);
+  color: #f8fbf4;
+}
+
+.filterChipCount {
+  color: var(--page-muted);
+}
+
+.clearFiltersButton {
+  padding: 0.55rem 0.95rem;
+  white-space: nowrap;
+}
+
+.emptyState {
+  text-align: left;
 }
 
 .aboutShell {
@@ -225,6 +343,10 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .filterHeader {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 720px) {
@@ -239,7 +361,9 @@
 
   .projectBody,
   .postCard,
-  .aboutContent {
+  .aboutContent,
+  .postFilters,
+  .emptyState {
     padding: 1.2rem;
   }
 }
