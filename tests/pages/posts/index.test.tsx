@@ -39,6 +39,25 @@ describe('PostsHome', () => {
     });
   });
 
+  it('renders the current visible month and year for each blog post card', () => {
+    const posts = [...postsData].sort(byNewestFirst);
+
+    render(<PostsHome posts={posts} tags={getSortedPostTags()} />);
+
+    [
+      'November, 2022',
+      'September, 2020',
+      'July, 2020',
+      'June, 2020',
+      'January, 2020',
+      'September, 2019',
+      'July, 2019',
+      'March, 2019',
+    ].forEach((dateLabel) => {
+      expect(screen.getAllByText(dateLabel).length).toBeGreaterThan(0);
+    });
+  });
+
   it('renders tag controls in alphabetical order', () => {
     const posts = [...postsData].sort(byNewestFirst);
 

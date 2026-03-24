@@ -4,7 +4,7 @@ import Layout from '../../components/Layout';
 import {
   getAllProjectSlugs,
   getOneProjectData,
-} from '../../lib/projectsService';
+} from '../../lib/projects/projectsService';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { formatDate } from '../../lib/helpers';
 import { PRIVATE } from '../../types/constants';

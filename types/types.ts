@@ -26,7 +26,7 @@ export interface ICollaborator {
 export interface IProject {
   slug: string;
   title: string;
-  timeStamp: number;
+  date: string;
   description: string;
   subDescription?: string[];
   tech: string[];
@@ -44,7 +44,7 @@ export interface ISlugs {
 export interface IPost {
   slug: string;
   title: string;
-  timeStamp: number;
+  date: string;
   tags: string[];
   preview?: string;
   previewImgSrc?: string;

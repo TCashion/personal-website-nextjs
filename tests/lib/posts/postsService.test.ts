@@ -5,7 +5,7 @@ import {
   getSortedPostsData,
   postsData,
 } from '../../../lib/posts/postsService';
-import { byNewestFirst } from '../../../lib/helpers';
+import { byNewestFirst, formatDate } from '../../../lib/helpers';
 
 describe('postsService', () => {
   it('stores one or more tags on every post', () => {
@@ -50,5 +50,28 @@ describe('postsService', () => {
       [...postsData].sort(byNewestFirst).map(({ slug }) => slug)
     );
     expect(postsData.map(({ slug }) => slug)).toEqual(originalOrder);
+  });
+
+  it('formats the existing blog metadata into the currently displayed month and year labels', () => {
+    expect(
+      postsData.map((post) => ({
+        slug: post.slug,
+        date: formatDate(post),
+      }))
+    ).toEqual([
+      { slug: 'a-letter-to-my-pre-bootcamp-self', date: 'September, 2020' },
+      { slug: 'hunting-with-my-father', date: 'July, 2020' },
+      { slug: 'just-the-right-thing', date: 'July, 2019' },
+      { slug: 'maf', date: 'March, 2019' },
+      {
+        slug: 'one-really-well-written-paragraph',
+        date: 'July, 2019',
+      },
+      { slug: 'ritual', date: 'January, 2020' },
+      { slug: 'most-important-question', date: 'June, 2020' },
+      { slug: 'where-is-the-fear', date: 'July, 2019' },
+      { slug: 'worn-out-boots', date: 'September, 2019' },
+      { slug: 'go-lang', date: 'November, 2022' },
+    ]);
   });
 });

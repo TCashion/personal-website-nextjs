@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import Layout from '../../components/Layout';
-import { byNewestFirst, formatDate } from '../../lib/helpers';
+import { formatDate } from '../../lib/helpers';
 import { IProject } from '../../types/types';
 import { GetStaticProps } from 'next';
-import { projects } from '../../lib/projects/projectsData';
+import { getAllProjects } from '../../lib/projects/projectsService';
 import styles from '../../styles/ContentPages.module.css';
 
 interface IProps {
@@ -59,10 +59,9 @@ const ProjectsHome = ({ projects }: IProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  projects.sort(byNewestFirst);
   return {
     props: {
-      projects,
+      projects: getAllProjects(),
     },
   };
 };

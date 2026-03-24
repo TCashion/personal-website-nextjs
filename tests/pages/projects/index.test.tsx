@@ -20,6 +20,25 @@ describe('ProjectsHome', () => {
     });
   });
 
+  it('renders the current visible month and year for each project card', () => {
+    const sortedProjects = [...projects].sort(byNewestFirst);
+
+    render(<ProjectsHome projects={sortedProjects} />);
+
+    [
+      'January, 2025',
+      'November, 2023',
+      'December, 2021',
+      'August, 2020',
+      'July, 2020',
+      'June, 2020',
+      'May, 2020',
+      'January, 2020',
+    ].forEach((dateLabel) => {
+      expect(screen.getAllByText(dateLabel).length).toBeGreaterThan(0);
+    });
+  });
+
   it('returns projects sorted newest-first from getStaticProps', async () => {
     const result = await getStaticProps({});
     const props = 'props' in result ? result.props : undefined;

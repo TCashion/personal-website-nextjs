@@ -7,7 +7,7 @@ import ProjectPage, {
 import {
   getAllProjectSlugs,
   getOneProjectData,
-} from '../../../lib/projectsService';
+} from '../../../lib/projects/projectsService';
 import { projects } from '../../../lib/projects/projectsData';
 
 describe('ProjectPage', () => {
@@ -21,6 +21,7 @@ describe('ProjectPage', () => {
     render(<ProjectPage project={project} />);
 
     expect(screen.getByRole('heading', { level: 2, name: project.title })).toBeTruthy();
+    expect(screen.getByText('June, 2020')).toBeTruthy();
     expect(screen.getByText(project.description)).toBeTruthy();
     expect(screen.getByRole('heading', { level: 3, name: /tech used:/i })).toBeTruthy();
     expect(screen.getByRole('link', { name: /go back/i }).getAttribute('href')).toBe('/projects');
