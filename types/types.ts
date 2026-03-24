@@ -45,6 +45,7 @@ export interface IPost {
   slug: string;
   title: string;
   timeStamp: number;
+  tags: string[];
   preview?: string;
   previewImgSrc?: string;
   componentName: string;
