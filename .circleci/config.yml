@@ -40,7 +40,7 @@ jobs:
 
   e2e-test:
     docker:
-      - image: cypress/base:20.20.2
+      - image: cypress/base:22.19.0
         environment:
           ## this enables colors in the output
           TERM: xterm
